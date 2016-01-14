@@ -1,0 +1,9 @@
+<template name="AppLayout">
+    <header class="header">
+        <h1 class="site-title">My Meteor Appx</h1>
+    </header>
+    {{> AppNav}}
+    <main class="app-layout">
+        {{> Template.dynamic template=main}}
+    </main>
+</template>
