@@ -33,7 +33,6 @@
   }
 }
 
-
 // Base Colors
 $red: #de4f4f;
 $blue: #1b66ff;
@@ -49,6 +48,7 @@ $text: $black;
 $action: $red;
 $accent: $blue;
 $nav: $dblue;
+
 
 html {
     box-sizing: border-box;
@@ -211,3 +211,4 @@ p {
 .page-title {
     margin-top: 0;
 }
+

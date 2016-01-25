@@ -1,3 +1,5 @@
 .DS_Store
 client/accounts
 client/accounts/*
+
+accounts.scss
