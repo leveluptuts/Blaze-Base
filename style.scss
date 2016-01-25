@@ -64,7 +64,8 @@ body {
 }
 
 h1 {
-    
+    font-weight: 100;
+    font-size: 3.998em;
 }
 
 h2 {
@@ -77,6 +78,9 @@ h3 {
     font-weight: 100;
 }
 
+p {
+    font-size: 1em;
+}
 
 .btn {
     background: $action;
@@ -115,6 +119,7 @@ h3 {
         color: $text;
     }
     .site-title {
+        line-height: 0;
         margin: 0;
     }
 }
@@ -148,7 +153,7 @@ h3 {
     background: $dgrey;
     margin-left: 80px;
     min-height: 100vh;
-    padding: 80px 100px;
+    padding: 40px 60px;
 }
 
 .app-nav {
@@ -160,7 +165,7 @@ h3 {
     height: 100vh;
     background: white;
     overflow: hidden;
-    color: #FFF;
+    color: $text;
     padding-top: 100px;
     transition: all 0.3s ease;
     border-right: solid 1px $dgrey;
@@ -174,7 +179,7 @@ h3 {
     a {
         width: 100%;
         padding: 10px 25px;
-        color: #FFF;
+        color: $text;
         display: block;
         white-space: nowrap;
         font-size: 1em;
@@ -188,9 +193,10 @@ h3 {
         > span {
             transform: translate3d(20px, 0,0);
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
         &:hover {
+            color: #FFF;
             border-color: $action;
             background: $nav - 20;
         }
@@ -203,7 +209,5 @@ h3 {
 }
 
 .page-title {
-    font-weight: 800;
-    list-style: 1px;
-    text-transform: uppercase;
+    margin-top: 0;
 }
