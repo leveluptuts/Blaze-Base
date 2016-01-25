@@ -1,6 +1,14 @@
 
 @import 'sass/_normalize.scss';
 
+@mixin trans($sec: 0.2s) {
+  -webkit-transition: all $sec ease-out;
+     -moz-transition: all $sec ease-out;
+      -ms-transition: all $sec ease-out;
+       -o-transition: all $sec ease-out;
+          transition: all $sec ease-out;
+}
+
 @function top-shadow($depth) {
   $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
   $blur: nth(1.5 3 10 14 19, $depth) * 4px;
@@ -42,32 +50,102 @@ $action: $red;
 $accent: $blue;
 $nav: $dblue;
 
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     color: $text;
     font-family: 'Open Sans', sans-serif;
 }
 
-.header {
-    background: $nav;
+h1 {
+    
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 3.157em;
+}
+
+h3 {
+    font-size: 1.777em;
+    font-weight: 100;
+}
+
+
+.btn {
+    background: $action;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 800;
+    padding: 19px 51px 17px;
     color: #FFF;
+    border: solid 2px $action;
+    @include trans();
+    &:hover {
+        background: $action - 30;
+        border-color: $action - 30;
+    }
+}
+
+.btn-text {
+    @extend .btn;
+    background: transparent;
+}
+
+
+.header {
+    background: white;
+    border-bottom: 1px solid $grey;
+    color: $text;
     position: relative;
     z-index: 10;
     height: 60px;
-    padding: 0 5%;
-    @include card(2);
+    padding: 5px 5%;
+    display: flex;
+    justify-content: space-between;
+    @include card(1);
     a {
-        color: #FFF;
+        color: $text;
     }
     .site-title {
         margin: 0;
-        line-height: 60px;
-        font-weight: 100;
+    }
+}
+
+.main-nav {
+    width: 150px;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
     }
 }
 
 
+// Homepage
+.billboard {
+    background-image: url('/met-stars.png'), linear-gradient(#202023, #19283f);
+    color: #FFF;
+    text-align: center;
+    border-bottom: 1px solid $dgrey;
+    padding: 40px 5%;
+}
+
+
 .app-layout {
-    background: $grey;
+    background: $dgrey;
     margin-left: 80px;
     min-height: 100vh;
     padding: 80px 100px;
@@ -80,12 +158,12 @@ body {
     left: 0;
     top: 0;
     height: 100vh;
-    background: $nav;
+    background: white;
     overflow: hidden;
     color: #FFF;
     padding-top: 100px;
     transition: all 0.3s ease;
-    @include card(1);
+    border-right: solid 1px $dgrey;
     &:hover {
         width: 300px;
         a > span {
@@ -122,4 +200,10 @@ body {
         margin: 0;
         list-style: none;
     }
+}
+
+.page-title {
+    font-weight: 800;
+    list-style: 1px;
+    text-transform: uppercase;
 }

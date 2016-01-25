@@ -2,7 +2,7 @@
 FlowRouter.route('/', {
     name: 'home',
     action() {
-        BlazeLayout.render("MainLayout", {main: "Home"});
+        BlazeLayout.render("HomeLayout", {main: "Home"});
     }
 });
 
