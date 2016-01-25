@@ -1,7 +1,5 @@
 <template name="AppLayout">
-    <header class="header">
-        <h1 class="site-title"><img alt="Level Up Tutorials Logo" src="/logo.svg" width="150"></h1>
-    </header>
+    {{> Header}}
     {{> AppNav}}
     <main class="app-layout">
         {{> Template.dynamic template=main}}

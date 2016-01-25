@@ -90,6 +90,7 @@ p {
     font-weight: 800;
     padding: 19px 51px 17px;
     color: #FFF;
+    letter-spacing: 1px;
     border: solid 2px $action;
     @include trans();
     &:hover {
@@ -106,7 +107,7 @@ p {
 
 .header {
     background: white;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $dgrey;
     color: $text;
     position: relative;
     z-index: 10;
@@ -150,7 +151,6 @@ p {
 
 
 .app-layout {
-    background: $dgrey;
     margin-left: 80px;
     min-height: 100vh;
     padding: 40px 60px;
