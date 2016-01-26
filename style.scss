@@ -33,13 +33,23 @@ p {
     font-size: 1em;
 }
 
-.btn {
+a {
+    color: $accent;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px 10px 7px;
+}
+
+.btn, button {
     background: $action;
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block;
     font-weight: 800;
-    padding: 19px 51px 17px;
+    padding: 10px 51px 7px;
     color: #FFF;
     letter-spacing: 1px;
     border: solid 2px $action;
@@ -77,17 +87,22 @@ p {
 }
 
 .main-nav {
-    width: 150px;
     ul {
         list-style: none;
         display: flex;
-        justify-content: space-between;
         padding: 0;
+    }
+    li + li {
+        margin-left: 20px;
     }
     a {
         text-decoration: none;
         border-bottom: 2px solid transparent;
     }
+}
+
+.login-toggle {
+    cursor: pointer;
 }
 
 

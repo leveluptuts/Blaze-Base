@@ -11,6 +11,7 @@ meteor
 ```
 
 Open up http://localhost:3000 and see this.
+
 ![Topics In Meteor](/public/topics.png)
 
 ## What is this?
