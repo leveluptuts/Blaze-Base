@@ -13,3 +13,12 @@ FlowRouter.route('/dashboard', {
         BlazeLayout.render("AppLayout", {main: "Dashboard"});
     }
 });
+
+
+// Login Routes
+FlowRouter.route('/user/:id', {
+    name: 'User Profile',
+    action() {
+        BlazeLayout.render("MainLayout", {main: "UserProfile"});
+    }
+});
