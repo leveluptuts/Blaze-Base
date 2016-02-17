@@ -3,3 +3,5 @@ client/accounts
 client/accounts/*
 
 accounts.scss
+settings.json
+mup.json

@@ -3,12 +3,6 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/dashboard">Dashboard</a></li>
-            {{#if currentUser }}
-                <li><a href="/user/{{currentUser._id}}">My Account</a></li>
-                <li class="logout">Logout</li>
-            {{else}}
-                <li class="login-toggle">Login/Signup</li>
-            {{/if}}
         </ul>
     </nav>
 </template>
