@@ -188,3 +188,57 @@ input[type="password"] {
     margin-top: 0;
 }
 
+table {
+    font-size: 0.8em;
+    width: 100%; 
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20); 
+    @include card(2);
+    tr:nth-child(even) {
+        background: #EEE 
+    }
+    td, th {
+        text-align: left;
+        padding: 10px 5px;
+    }
+    th {
+        text-transform: uppercase;
+        background: $dblue;
+        color: #fff;
+    }
+    &.edit-mode {
+        transform: translate3d(300px, 0, 0);
+    }
+}
+
+.user_id {
+    color: $blue;
+    cursor: pointer; 
+}
+
+.user-edit {
+    position: absolute;
+    left: -300px;
+    top: 0;
+    background: #FFF;
+    z-index: 10;
+    padding: 20px;
+    width: 280px;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.65, 0.265, 1.20);
+    @include card(2);
+    .close-edit-mode {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        font-size: 1.2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        cursor: pointer;  
+    }
+}
+
+.edit-mode .user-edit {
+    opacity: 1; 
+}
