@@ -1,0 +1,13 @@
+<template name="SideNavBills">
+  {{#if isInRole 'admin'}}
+
+
+<nav class="side-nav">
+  <ul>
+    <li><a href="/sallery"><i class="fa fa-user" aria-hidden="true"></i> Sallery </a></li>
+    <li><a href="/bills"><i class="fa fa-users"  aria-hidden="true"></i>Bills</a></li>
+    <li><a href="/ClinicalBills"><i class="fa fa-hospital-o" aria-hidden="true"></i>Clinic </a></li>
+  </ul>
+</nav>
+{{/if}}
+</template>

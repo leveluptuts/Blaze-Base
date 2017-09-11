@@ -1,0 +1,8 @@
+<template name="LoginModal">
+	{{#if $not currentUser}}
+		<div class="login-modal {{$.Session.get 'nav-toggle'}}">
+			
+			{{> atForm}}
+		</div>
+	{{/if}}
+</template>
