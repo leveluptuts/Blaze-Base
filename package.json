@@ -1,0 +1,22 @@
+{
+  "name": "blazebase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leveluptuts/Blaze-Base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leveluptuts/Blaze-Base/issues"
+  },
+  "homepage": "https://github.com/leveluptuts/Blaze-Base#readme",
+  "dependencies": {
+    "moment": "^2.12.0"
+  }
+}
