@@ -1,0 +1,40 @@
+<template name="mangmentReports">
+{{> SideNav}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+      <div class="panel-heading">Attendance</div>
+      <a href="/Attendance" class="btn btn-primary pull-right">Attendance</a>
+
+  <div id="container-column" style="min-width: 310px; height: 400px;"></div>
+</div>
+  </div>
+<p><label></label></p>
+<p><label></label></p>
+  <div class="panel panel-default">
+        <div class="panel-heading">Bills</div>
+        <div class="panel-body">
+            <div class="btn-group btn-group-justified">
+                <a href="#" class="displaySerie1 btn btn-default">Reservation</a>
+                <a href="#" class="displaySerie2 btn btn-default">Procedures </a>
+                <a href="#" class="displaySerie3 btn btn-default">Stock </a>
+                  <a href="#" class="displaySerie4 btn btn-default">Clinic </a>
+            </div>
+            {{> highchartsHelper chartId="chart" chartWidth="100%" charHeight="100%" chartObject=chartMultiSeries}}
+<a href="/Stock" class="btn btn-primary pull-right">Clinc</a>
+            <a href="/Stock" class="btn btn-primary pull-right">Stock</a>
+            <a href="/attendance" class="btn btn-primary pull-right">Procedures</a>
+            <a href="/Stock" class="btn btn-primary pull-right">Reservation</a>
+
+
+        </div>
+    </div>
+
+
+
+
+</template>

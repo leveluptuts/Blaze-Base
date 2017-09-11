@@ -1,0 +1,42 @@
+<template name="Reservation">
+
+  {{#if isInRole 'reservation'}}
+
+
+
+    <div><a href="/newpatient" class="btn btn-defult">New Patient </a></div>
+    <div class="page-header clearfix">
+      <div class="pull-right">
+        <input type="text" name="search" class="form-control" width="250px" placeholder="Find  patient...">
+      </div>
+    </div>
+
+    <ul class="list-group">
+      {{#if searching}}
+        {{> loading}}
+      {{else}}
+        {{#each patientInfo}}
+        <div>
+          <li class="list-group-item clearfix">
+             <span class="pull-left">{{name}}</span>
+
+
+<span class="pull-right"><a href="/reservationhistory/{{_id}}" class="btn btn-defult">view </a></span>
+  <span class="pull-right"><a href="/addReservation/{{_id}}" class="btn btn-defult"> add </a></span>
+
+
+          </li>
+
+  </div>
+
+        {{else}}
+          <p class="alert alert-warning">Nothing found for {{query}}. Sorry, bub.</p>
+        {{/each}}
+      {{/if}}
+    </ul>
+
+
+{{else}}
+  <h1>Not Authorized</h1>
+{{/if}}
+</template>

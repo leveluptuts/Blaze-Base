@@ -1,0 +1,77 @@
+<template name="addclinicalbill">
+
+{{>SideNavBills}}
+
+
+<form class="add-Bill-info" >
+<button type="submit" class="btn btn-primary" >new Clinic Bill</button>
+
+</form>
+
+  <form class="add-Clinic-Bill-info" >
+    <div class="form-group">
+    <label>Item</label>
+    <input type="text" class="form-control" id="item" name="item" >
+    </div>
+    <div class="form-group">
+    <label>Amount</label>
+    <input type="text" class="form-control" id="amount" name="amount">
+    </div>
+    <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" id="price" name="price">
+    </div>
+    <div class="form-group">
+    <label>Comment</label>
+    <input type="text" class="form-control" id="comment" name="comment">
+    </div>
+
+<button type="submit" id="buttonAdd" class="btn btn-primary" disabled>Add</button>
+  </form>
+
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+
+            <th>Item</th>
+            <th>Unit</th>
+            <th>Price</th>
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+            {{#each ClinicBills}}
+                <tr>
+                  <td>
+                      {{ item }}
+                  </td>
+                <td>
+                    {{ amount }}
+                </td>
+                <td>
+                    {{ price }}
+                </td>
+                <td>
+                    {{ comment }}
+                </td>
+
+
+                <td><button class="editItem">Edit</button><button class="deleteItem">Delete</button></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div class="form-group">
+
+    <label>Total</label>
+    <input type="text" class="form-control" id="Total" name="Total">
+    <span class="pull-right"><button id="buttunSave" type="submit" class="btn btn-primary" disabled>Save</button></span>
+    <span class="pull-right"><button type="submit" id="buttonPrint" class="btn btn-primary">Print</button></span>
+
+    </div>
+</template>

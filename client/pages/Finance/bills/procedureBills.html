@@ -1,0 +1,112 @@
+<template name="ProcedureBills">
+
+  {{>SideNavBills}}
+  <legend>  <a href="/sallery" class="btn btn-defult">Reservation   </a>
+  <a href="/deduction" class="btn btn-defult">Procedure</a>
+  </legend>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" id="buttonProcedure" href="#collapseProcedure"> Procedures Search</a>
+        </div>
+    <div id="collapseProcedure" class="panel-collapse collapse on">
+
+      <div class="panel-body">
+            <div class="col-xs-4">
+          <label>Start</label>
+          <input type="text" class="form-control" id="start" name="start" >
+            </div>
+            <div class="col-xs-4">
+          <label>End</label>
+          <input type="text" class="form-control"  id="end" name="end" >
+</div>
+        <div class="col-xs-4">
+            <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+
+        </div>
+              </div>
+
+      <div class="panel-body">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+
+            <th>Procedure</th>
+            <th>Doctor</th>
+            <th>Amount</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            {{#each mdata}}
+
+        <tr>
+
+                <td>{{ procedurename }}</td>
+                <td>{{ DrName }}</td>
+                <td>{{TotalProcedureBill}}</td>
+
+                <td><span class="pull-right"><a href="/viewpatientBill/{{_id}}/{{patientId}}" class="btn btn-primary">Details </a></span></td>
+
+        </tr>
+
+            {{/each}}
+        </tbody>
+      </table>
+      </div>
+
+</div>
+
+<div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" id="buttonProcedure" href="#collapseProcedure"> Advanced Search</a>
+    </div>
+<div id="collapseProcedure" class="panel-collapse collapse on">
+
+  <div class="panel-body">
+        <div class="col-xs-4">
+      <label>Start</label>
+      <input type="text" class="form-control" id="start" name="start" >
+        </div>
+        <div class="col-xs-4">
+      <label>End</label>
+      <input type="text" class="form-control"  id="end" name="end" >
+</div>
+    <div class="col-xs-4">
+        <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+
+    </div>
+          </div>
+
+  <div class="panel-body">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+
+        <th>Procedure</th>
+        <th>Doctor</th>
+        <th>Amount</th>
+
+    </tr>
+    </thead>
+    <tbody>
+        {{#each mdata}}
+
+    <tr>
+
+            <td>{{ procedurename }}</td>
+            <td>{{ DrName }}</td>
+            <td>{{TotalProcedureBill}}</td>
+
+            <td><span class="pull-right"><a href="/viewpatientBill/{{_id}}/{{patientId}}" class="btn btn-primary">Details </a></span></td>
+
+    </tr>
+
+        {{/each}}
+    </tbody>
+  </table>
+  </div>
+
+</div>
+</div>
+
+  </template>

@@ -1,0 +1,496 @@
+<template name="examination">
+{{#with Examination}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{Examination.patientId}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+<legend> <a href="/examination" class="btn btn-defult">Examination</a>
+
+
+</legend>
+
+<form class="patient-examination" >
+
+      <div class="panel panel-default">
+
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Patient Data</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse off">
+        <div class="panel-body">
+
+<div class="col-xs-4">
+   <label>Height</label>
+   <input type="text" class="form-control" id="Height" name="Height" value="{{Examination.Height}}">
+</div>
+
+<div class="col-xs-4">
+  <label>Weight</label>
+  <input type="text" class="form-control"  id="Weight" name="Weight" value="{{Examination.Weight}}">
+</div>
+
+<div class="col-xs-4">
+  <label>Temp.</label>
+  <input type="text" class="form-control"  id="Temp" name="Temp" value="{{Examination.Temp}}">
+</div>
+
+<div class="col-xs-4">
+  <label>B.P</label>
+  <input type="text" class="form-control"  id="Bp" name="Bp" value="{{Examination.Bp}}" >
+</div>
+
+<div class="col-xs-4">
+  <label>Pulse</label>
+  <input type="text" class="form-control"  id="Pulse"  name="Pulse"  value="{{Examination.Pulse}}">
+</div>
+
+<div class="col-xs-4">
+  <label>R.R</label>
+  <input type="text" class="form-control"  id="Rr" name="Rr" value="{{Examination.Rr}}">
+  <p><label></label></p>
+</div>
+<p><label></label></p>
+<form>
+    <label for="descField" class="col-xs-4">Pain </label>
+    <label ><input type="radio" name="Pain" class="radio-inline col-xs-8" value="Yes"   {{Pain 'Yes'}} >  Yes  </label>
+    <label><input type="radio" name="Pain"  class="radio-inline col-xs-8"  value="No"   {{Pain 'No'}}>  No</label>
+</form>
+
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"> <p><input type="text" class="form-control" placeholder="Specify"  id="PainSpecify" name="PainSpecify"  value="{{Examination.PainSpecify}}"></p></div>
+<p><label></label></p>
+
+
+
+ </div>
+</div>
+
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Clinical Finding by Systems</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>General<br />Apperance</p> </label>
+              <label ><input type="radio" name="GeneralApperance" class="radio-inline col-xs-8" value="Normal" {{GeneralApperance 'Normal'}}>  Normal  </label>
+              <label><input type="radio" name="GeneralApperance"  class="radio-inline col-xs-8" value="Abnormal" {{GeneralApperance 'Abnormal'}}>  Abnormal</label>
+          </form>
+
+
+      <label for="descField" class="col-xs-4"></label>
+      <div class="col-xs-8"> <p><input type="text" class="form-control"  id="GeneralApperanceComment" name="GeneralApperanceComment" value="{{Examination.GeneralApperanceComment}}"></p></div>
+<p><label></label></p>
+
+
+    <form>
+          <label for="descField" class="col-xs-4">Skin</label>
+          <label ><input type="radio" name="Skin" class="radio-inline col-xs-8" value="Normal" {{Skin 'Normal'}}>  Normal  </label>
+          <label><input type="radio" name="Skin"  class="radio-inline col-xs-8" value="Abnormal" {{Skin 'Abnormal'}}>  Abnormal</label>
+      </form>
+
+  <label for="descField" class="col-xs-4"></label>
+  <div class="col-xs-8"> <p><input type="text" class="form-control"  id="SkinComment" name="SkinComment"  value="{{Examination.Skin.Comment}}" ></p></div>
+<p><label></label></p>
+
+<h4><u>Head & Neck</u></h4>
+
+
+<form>
+      <label for="descField" class="col-xs-4">Eyes</label>
+      <label ><input type="radio" name="Eyes" class="radio-inline col-xs-8"  value="Normal" {{Eyes 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Eyes"  class="radio-inline col-xs-8" value="Abnormal" {{Eyes 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"> <p><input type="text" class="form-control"  id="EyesComment" name="EyesComment" value="{{Examination.Eyes.Comment}}" ></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Nose</label>
+      <label ><input type="radio" name="Nose" class="radio-inline col-xs-8" value="Normal" {{Nose 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Nose"  class="radio-inline col-xs-8" value="Abnormal" {{Nose 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="NoseComment" name="NoseComment" value="{{Examination.Nose.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Mouth<br />&Pharynx </p> </label>
+      <label ><input type="radio" name="MouthPharynx" class="radio-inline col-xs-8" value="Normal" {{MouthPharynx 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="MouthPharynx"  class="radio-inline col-xs-8" value="Abnormal" {{MouthPharynx 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="MouthPharynxCommment" name="MouthPharynxCommment" value="{{Examination.MouthPharynx.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Tongue<br />&Teeth </p> </label>
+      <label ><input type="radio" name="TongueTeeth" class="radio-inline col-xs-8" value="Normal" {{TongueTeeth 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="TongueTeeth"  class="radio-inline col-xs-8" value="Abnormal" {{TongueTeeth 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="TongueTeethComment" name="TongueTeethComment" value="{{Examination.TongueTeeth.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Thyroid </label>
+      <label ><input type="radio" name="Thyroid" class="radio-inline col-xs-8" value="Normal" {{Thyroid 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Thyroid"  class="radio-inline col-xs-8" value="Abnormal" {{Thyroid 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="ThyroidComment" name="ThyroidComment" value="{{Examination.Thyroid.Comment}}" ></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4">L.N</label>
+      <label ><input type="radio" name="Ln" class="radio-inline col-xs-8" value="Normal" {{Ln 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Ln"  class="radio-inline col-xs-8" value="Abnormal" {{Ln 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="LnComment" name="LnComment" value="{{Examination.Ln.Comment}}"></p></div>
+<p><label></label></p>
+
+<h4><u>Chest</u></h4>
+
+<form>
+      <label for="descField" class="col-xs-4">Inspection</label>
+      <label ><input type="radio" name="Inspection" class="radio-inline col-xs-8" value="Normal" {{Inspection 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Inspection"  class="radio-inline col-xs-8" value="Abnormal" {{Inspection 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="InspectionComment" name="InspectionComment"  value="{{Examination.Inspection.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Palpation</label>
+      <label ><input type="radio" name="Palpation" class="radio-inline col-xs-8" value="Normal" {{Palpation 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Palpation"  class="radio-inline col-xs-8" value="Abnormal" {{Palpation 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="PalpationComment" name="PalpationComment" value="{{Examination.Palpation.Comment}}" ></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Percussion </label>
+      <label ><input type="radio" name="Percussion" class="radio-inline col-xs-8" value="Normal" {{Percussion 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Percussion"  class="radio-inline col-xs-8" value="Abnormal" {{Percussion 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="PercussionComment" name="PercussionComment"  value="{{Examination.Percussion.Comment}}" ></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4">Auscultation</label>
+      <label ><input type="radio" name="Auscultation" class="radio-inline col-xs-8" value="Normal" {{Auscultation 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Auscultation"  class="radio-inline col-xs-8" value="Abnormal" {{Auscultation 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="AuscultationComment" name="AuscultationComment"  value="{{Examination.Auscultation.Comment}}" ></p></div>
+<p><label></label></p>
+
+
+<h4><u>Heart</u></h4>
+
+<form>
+      <label for="descField" class="col-xs-4">Inspection</label>
+      <label ><input type="radio" name="HeartInspection" class="radio-inline col-xs-8" value="Normal" {{HeartInspection 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="HeartInspection"  class="radio-inline col-xs-8" value="Abnormal" {{HeartInspection 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="HeartInspectionComment" name="HeartInspectionComment"  value="{{Examination.HeartInspection.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Palpation</label>
+      <label ><input type="radio" name="HeartPalpation" class="radio-inline col-xs-8" value="Normal" {{HeartPalpation 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="HeartPalpation"  class="radio-inline col-xs-8" value="Abnormal" {{HeartPalpation 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="HeartPalpationComment" name="HeartPalpationComment"  value="{{Examination.HeartPalpation.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Percussion </label>
+      <label ><input type="radio" name="HeartPercussion" class="radio-inline col-xs-8" value="Normal" {{HeartPercussion 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="HeartPercussion"  class="radio-inline col-xs-8" value="Abnormal" {{HeartPercussion 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="HeartPercussionComment" name="HeartPercussionComment" value="{{Examination.HeartPercussion.Comment}}" ></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4">Auscultation</label>
+      <label ><input type="radio" name="HeartAuscultation" class="radio-inline col-xs-8"  value="Normal" {{HeartAuscultation 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="HeartAuscultation"  class="radio-inline col-xs-8" value="Abnormal" {{HeartAuscultation 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="HeartAuscultationComment" name="HeartAuscultationComment" value="{{Examination.HeartAuscultation.Comment}}"></p></div>
+<p><label></label></p>
+
+<h4><u>Abdomen</u></h4>
+
+<form>
+      <label for="descField" class="col-xs-4">Inspection</label>
+      <label ><input type="radio" name="AbdomenInspection" class="radio-inline col-xs-8" value="Normal" {{AbdomenInspection 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="AbdomenInspection"  class="radio-inline col-xs-8" value="Abnormal" {{AbdomenInspection 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="AbdomenInspectionComment" name="AbdomenInspectionComment" value="{{Examination.AbdomenInspection.Comment}}" ></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Palpation</label>
+      <label ><input type="radio" name="AbdomenPalpation" class="radio-inline col-xs-8" value="Normal" {{AbdomenPalpation 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="AbdomenPalpation"  class="radio-inline col-xs-8" value="Abnormal" {{AbdomenPalpation 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="AbdomenPalpationComment" name="AbdomenPalpationComment" value="{{Examination.AbdomenPalpation.Comment}}" ></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Percussion </label>
+      <label ><input type="radio" name="AbdomenPercussion" class="radio-inline col-xs-8" value="Normal" {{AbdomenPercussion 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="AbdomenPercussion"  class="radio-inline col-xs-8" value="Abnormal" {{AbdomenPercussion 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="AbdomenPercussionComment" name="AbdomenPercussionComment" value="{{Examination.AbdomenPercussion.Comment}}" ></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4">Auscultation</label>
+      <label ><input type="radio" name="AbdomenAuscultation" class="radio-inline col-xs-8" value="Normal" {{AbdomenAuscultation 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="AbdomenAuscultation"  class="radio-inline col-xs-8" value="Abnormal" {{AbdomenAuscultation 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="AbdomenAuscultationComment" name="AbdomenAuscultationComment"  value="{{Examination.AbdomenAuscultation.Comment}}"></p></div>
+<p><label></label></p>
+
+
+<h4><u>Neurological Findings</u></h4>
+<form>
+      <label for="descField" class="col-xs-4"><p>Granial<br/> Nerves</p></label>
+      <label ><input type="radio" name="GranialNerves" class="radio-inline col-xs-8" value="Normal" {{GranialNerves 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="GranialNerves"  class="radio-inline col-xs-8" value="Abnormal" {{GranialNerves 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="GranialNervesComment" name="GranialNervesComment" value="{{Examination.GranialNerves.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Motor<br/> System</p></label>
+      <label ><input type="radio" name="MotorSystem" class="radio-inline col-xs-8" value="Normal" {{MotorSystem 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="MotorSystem"  class="radio-inline col-xs-8" value="Abnormal" {{MotorSystem 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="MotorSystemComment" name="MotorSystemComment" value="{{Examination.MotorSystem.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Sensory<br/> System</p> </label>
+      <label ><input type="radio" name="SensorySystem" class="radio-inline col-xs-8" value="Normal" {{SensorySystem 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="SensorySystem"  class="radio-inline col-xs-8" value="Abnormal" {{SensorySystem 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="SensorySystemComment" name="SensorySystemComment"   value="{{Examination.SensorySystem.Comment}}"></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4">Reflexes</label>
+      <label ><input type="radio" name="Reflexes" class="radio-inline col-xs-8" value="Normal" {{Reflexes 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Reflexes"  class="radio-inline col-xs-8" value="Abnormal" {{Reflexes 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="ReflexesComment" name="ReflexesComment"   value="{{Examination.Reflexes.Comment}}"></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4">Gait</label>
+      <label ><input type="radio" name="Gait" class="radio-inline col-xs-8" value="Normal" {{Gait 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Gait"  class="radio-inline col-xs-8" value="Abnormal" {{Gait 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="GaitComment" name="GaitComment" value="{{Examination.Gait.Comment}}" ></p></div>
+<p><label></label></p>
+
+<h4><u>Musculoskeletal</u></h4>
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Muscles<br/> Bones</p></label>
+      <label ><input type="radio" name="MusclesBones" class="radio-inline col-xs-8" value="Normal" {{MusclesBones 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="MusclesBones"  class="radio-inline col-xs-8" value="Abnormal" {{MusclesBones 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="MusclesBonesComment" name="MusclesBonesComment" value="{{Examination.MusclesBones.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Joints</label>
+      <label ><input type="radio" name="Joints" class="radio-inline col-xs-8" value="Normal" {{Joints 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Joints"  class="radio-inline col-xs-8"  value="Abnormal" {{Joints 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="JointsComment" name="JointsComment" value="{{Examination.Joints.Comment}}"></p></div>
+<p><label></label></p>
+
+<form>
+      <label for="descField" class="col-xs-4">Extremities</label>
+      <label ><input type="radio" name="Extremities" class="radio-inline col-xs-8" value="Normal" {{Extremities 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="Extremities"  class="radio-inline col-xs-8" value="Abnormal" {{Extremities 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="ExtremitiesComment" name="ExtremitiesComment" value="{{Examination.Extremities.Comment}}"> </p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Nutritional<br/>Status</p></label>
+      <label ><input type="radio" name="NutritionalStatus" class="radio-inline col-xs-8" value="Normal" {{NutritionalStatus 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="NutritionalStatus"  class="radio-inline col-xs-8" value="Abnormal" {{NutritionalStatus 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="NutritionalStatusComment" name="NutritionalStatusComment" value="{{Examination.NutritionalStatus.Comment}}"></p></div>
+<p><label></label></p>
+
+
+<form>
+      <label for="descField" class="col-xs-4"><p>Psychological<br/>Status</p></label>
+      <label ><input type="radio" name="PsychologicalStatus" class="radio-inline col-xs-8" value="Normal" {{PsychologicalStatus 'Normal'}}>  Normal  </label>
+      <label><input type="radio" name="PsychologicalStatus"  class="radio-inline col-xs-8" value="Abnormal" {{PsychologicalStatus 'Abnormal'}}>  Abnormal</label>
+  </form>
+
+<label for="descField" class="col-xs-4"></label>
+<div class="col-xs-8"><p> <input type="text" class="form-control"  id="PsychologicalStatusComment" name="PsychologicalStatusComment" value="{{Examination.PsychologicalStatus.Comment}}"></p></div>
+
+
+</div>
+      </div>
+    </div>
+
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Others</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <form>
+              <div class="col-xs-12">
+                 <label>ECG</label>
+                  <input type="text"  class="form-control"  id="ECg" name="ECg" value="{{Examination.ECg}}" >
+              </div>
+            </form>
+            <form>
+                <div class="col-xs-12">
+                   <label>GCS</label>
+                  <input type="text"  class="form-control"  id="GCs" name="GCs" value="{{Examination.GCs}}">
+                </div>
+              </form>
+              <form>
+
+                </form>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Provisional Diagnosis</a>
+    </h4>
+  </div>
+  <div id="collapse4" class="panel-collapse collapse">
+    <div class="panel-body">
+
+      <form>
+          <div class="col-xs-12">
+             <label>Diagnosis</label>
+              <input type="text"  class="form-control"  id="Diagnosis" name="Diagnosis" value="{{Examination.Diagnosis}}" >
+          </div>
+        </form>
+        <form>
+            <div class="col-xs-12">
+               <label>Associated Risk Factors</label>
+              <input type="text"  class="form-control"  id="RiskFactors" name="RiskFactors"  value="{{Examination.RiskFactors}}"  >
+            </div>
+          </form>
+          <form>
+              <div class="col-xs-12">
+                 <label>Plan of Care</label>
+                  <input type="text"  class="form-control"  id="PlanofCare" name="PlanofCare" value="{{Examination.PlanofCare}}">
+              </div>
+            </form>
+
+
+
+  </div>
+</div>
+</div>
+<button type="submit" class="btn btn-primary">Insert</button>
+</form>
+
+
+{{/with}}
+</template>

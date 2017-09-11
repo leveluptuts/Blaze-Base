@@ -1,0 +1,75 @@
+<template name="viewpatientBill">
+  <h4>{{patientInfo.name}}</h4>
+{{>SideNav}}
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+
+        <th>Item</th>
+        <th>unit</th>
+        <th>Amount</th>
+
+      </tr>
+      </thead>
+      <tbody>
+          {{#each BillInfo}}
+              <tr>
+                <td>
+                    {{ item }}
+                </td>
+
+              <td>
+                  {{ unit }}
+              </td>
+              <td>
+                  {{ price }}
+              </td>
+
+              </tr>
+          {{/each}}
+      </tbody>
+  </table>
+
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+
+        <th>Handskill</th>
+        <th>Anaesthesia</th>
+        <th>or</th>
+        <th>Assistance</th>
+        <th>Accomoadation</th>
+        <th>Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+          {{#each BillProcedure}}
+              <tr>
+                <td>
+                    {{ Handskill }}
+                </td>
+
+              <td>
+                  {{ Anaesthesia }}
+              </td>
+              <td>
+                  {{ OR }}
+              </td>
+              <td>
+                  {{ Assistance }}
+              </td>
+              <td>
+                  {{ Accomoadation }}
+              </td>
+              <td>
+                  {{ TotalProcedureBill }}
+              </td>
+              </tr>
+          {{/each}}
+      </tbody>
+  </table>
+
+
+
+    <label>Total: {{BillTotal.total}}</label>
+</template>

@@ -1,0 +1,194 @@
+<template name="AdminNotification">
+
+    {{> SideNav}}
+    <input type="hidden" class="form-control" id="LimitationAmount" name="Dignoses" value="{{stockQuantaty.notificationvalue}}" >
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">Clinic Monitor{{LimitationAmount}}</div>
+       <div class="panel-body">
+         <div class="col-xs-12">
+    <p><label>Waiting Patients  : </label>{{reservationcounter}} </p>
+    <p><label>Total Procedures  : </label>{{ProcedureBillsCounter}} </p>
+    <p><label>Stock Transaction Items  : </label>{{StockBillsCounter}}</p>
+    <label>Facility Bills  : </label>{{FacilityBillsCounter}}
+    <button  data-toggle="collapse" data-parent="#accordion" href="#collapse1" type="submit" id="buttonShow" class="btn btn-primary pull-right">Facility Bills</button>
+
+
+
+      <h4 class="panel-title">
+      </h4>
+
+    <div id="collapse1" class="panel-collapse collapse off">
+      <div class="panel-body">
+
+        <form>
+            <label >Reservation Amount</label>
+<input type="text" class="form-control" id="Total" name="Total" value="">
+        </form>
+
+        <form>
+            <label >Procedures Bills Amount </label>
+             <input type="text" class="form-control"  id="ProceduresBillsAmount" name="occupation" >
+        </form>
+        <form>
+            <label >Stock Transaction Amount : </label>
+             <input type="text" class="form-control"  id="StockTransactionAmount" name="occupation" >
+        </form>
+        <form>
+            <label >Facility Bills Amount </label>
+             <input type="text" class="form-control"  id="ClinicBillsAmount" name="occupation" >
+        </form>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+    </div>
+    </div>
+
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">Staff Attendance</div>
+       <div class="panel-body">
+
+         <div class="col-xs-12">
+         <p><label>Active Staff </label></p>
+         <table class="table table-bordered table-hover">
+             <thead>
+             <tr>
+                 <th>Name</th>
+                <th>Attend Time</th>
+                 <th>Delay</th>
+             </tr>
+             </thead>
+             <tbody>
+                 {{#each ActiveStaff}}
+                     <tr>
+                       <td>
+                           {{ Drname }}
+                       </td>
+                     <td>
+                          {{ ActualAttendTime }}
+                     </td>
+                     <td>
+                          {{ humanReadable.hours }}:{{ humanReadable.minutes }}
+                     </td>
+                     <td>
+                       <button type="submit" class="btn btn-primary">Alert</button>
+                     </td>
+                     </tr>
+
+                 {{/each}}
+             </tbody>
+
+         </table>
+         <span class="pull-right"><a href="/attendance" class="btn btn-primary">attendance</a></span>
+
+         </div>
+
+
+
+
+    </div>
+    </div>
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">Stock Status</div>
+       <div class="panel-body">
+
+
+
+         <table class="table table-bordered table-hover">
+             <thead>
+             <tr>
+                 <th>Item</th>
+                <th>Q.</th>
+                 <th>Expiry Date</th>
+
+             </tr>
+             </thead>
+             <tbody>
+                 {{#each stockExpiery}}
+                     <tr>
+                       <td>
+                           {{ Item }}
+                       </td>
+                     <td>
+                         {{ Amount }}
+                     </td>
+                     <td>
+                         {{ expirydate }}
+                     </td>
+
+                     </tr>
+                 {{/each}}
+             </tbody>
+         </table>
+         <button  data-toggle="collapse" data-parent="#accordion" href="#collapse09" type="submit" id="btnStocklimitation" class="btn btn-primary pull-left">Stock limitation</button>
+
+
+         
+           <h4 class="panel-title">
+           </h4>
+
+         <div id="collapse09" class="panel-collapse collapse off">
+           <div class="panel-body">
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Q.</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {{#each limitamountvalue}}
+                                <tr>
+                                  <td>
+                                      {{ Item }}
+                                  </td>
+                                <td>
+                                    {{ Amount }}
+                                </td>
+
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    <span class="pull-right"><a href="/StockStatus" class="btn btn-primary">View </a></span>
+
+
+           </div>
+           </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</template>

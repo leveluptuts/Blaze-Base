@@ -1,0 +1,39 @@
+<template name="viewclinicalbill">
+
+  {{>SideNavBills}}
+
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+
+        <th>Item</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Comment</th>
+
+      </tr>
+      </thead>
+      <tbody>
+          {{#each BillInfo}}
+              <tr>
+                <td>
+                    {{ item }}
+                </td>
+
+              <td>
+                  {{ amount }}
+              </td>
+              <td>
+                  {{ price }}
+              </td>
+              <td>
+                  {{ comment }}
+              </td>
+
+              </tr>
+          {{/each}}
+      </tbody>
+  </table>
+
+    <label>Total: {{BillTotal.total}}</label>
+</template>

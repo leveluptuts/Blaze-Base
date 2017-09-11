@@ -1,0 +1,84 @@
+<template name="addMangment">
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{mdata._id}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+  <form class="add-Bill-info" >
+<button type="submit"   class="btn btn-primary"  id="buttonItemenable" >Edite</button>
+  </form>
+<p><label></label></p>
+
+
+       <form class="update-patient-info"  >
+       <div class="form-group">
+
+
+
+         <div class="form-group">
+         <label>Diagnosis</label>
+         <input type="text" class="form-control" id="Dignoses" name="Dignoses" >
+         </div>
+
+
+
+         <div class="form-group">
+         <label>Invistigations</label>
+         <input type="text" class="form-control" id="Invistigations" name="Invistigations" >
+         </div>
+
+         <div class="form-group">
+         <label>Comment</label>
+         <input type="text" class="form-control" id="Comment" name="Comment" >
+         </div>
+
+
+
+       </div>
+       </form>
+       <div class="form-group">
+       <label>Medication</label>
+     <input type="text" class="form-control" id="medication" name="medication" >
+
+       <label>Medication comment</label>
+       <input type="text" class="form-control" id="medicationComment" name="medicationComment" >
+       <button  id="add-medication-info" class="btn btn-primary pull-right" disabled>Add medicien</button>
+
+       </div>
+       <table class="table table-bordered table-hover">
+           <thead>
+             <tr>
+               <th>Medication</th>
+               <th>comment</th>
+
+             </tr>
+           </thead>
+           <tbody>
+               {{#each medicationtview}}
+                   <tr>
+                     <td>
+                         {{ medication }}
+                     </td>
+                   <td>
+                       {{ medicationComment }}
+                   </td>
+
+
+                   <td><button class="editItem">Edit</button><button class="deleteItem">Delete</button></td>
+                   </tr>
+               {{/each}}
+           </tbody>
+       </table>
+       <span class="pull-right"><button type="submit" id="buttonSave" class="btn btn-primary"  disabled >Save</button></span>
+
+
+
+</template>
+
+<template name="search1">
+
+  <input type="text" id="searchBox" name="searchBox">
+</template>

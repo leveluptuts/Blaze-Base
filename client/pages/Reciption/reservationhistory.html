@@ -1,0 +1,22 @@
+<template name="reservationhistory">
+
+
+    {{# each mdata}}
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">{{name}}</div>
+       <div class="panel-body">
+
+
+         <div class="col-xs-12">
+    <p><label>Time : </label> {{date}}</p>
+    <p><label>Type : </label> {{type}}</p>
+
+
+
+        </div>
+    </div>
+
+    </div>
+    {{/each}}
+</template>

@@ -1,0 +1,116 @@
+<template name="salleryprint">
+
+<div class="panel-body">
+  <div class="col-xs-4">
+<label>Dr.Name</label>
+  {{> search04}}
+</div>
+
+      <div class="col-xs-4">
+    <label>Start</label>
+    <input type="text" class="form-control" id="start" name="start" >
+      </div>
+      <div class="col-xs-4">
+    <label>End</label>
+    <input type="text" class="form-control"  id="end" name="end" >
+    </div>
+    <button type="submit" id="button" class="btn btn-primary pull-right" >Find</button>
+
+        </div>
+
+
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+
+                <th>Date</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#each Reservation}}
+
+            <tr>
+
+                    <td>{{ date }}</td>
+                    <td>{{ type }}</td>
+                    <td>{{ price }}</td>
+            </tr>
+
+                {{/each}}
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+
+                <th>Date</th>
+                <th>Procedure</th>
+                <th>Hand Skill </th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#each Procedure}}
+
+            <tr>
+
+                    <td>{{ createdAt }}</td>
+                    <td>{{ procedurename }}</td>
+                    <td>{{ Handskill }}</td>
+
+
+            </tr>
+
+                {{/each}}
+            </tbody>
+        </table>
+  <div class="panel panel-default">
+        <div class="panel-heading">
+
+                <a data-toggle="collapse" data-parent="#accordion" id="buttonloan" href="#collapse01"> Calculate ِSallery</a>
+            </div>
+        <div id="collapse01" class="panel-collapse collapse off">
+        <div class="panel-body">
+
+        <div class="col-xs-4">
+        <label> Reservation Percentage</label>
+        <input type="text" class="form-control" id="TotalReservation" name="TotalReservation"  disabled>
+        <input type="text" class="form-control" id="ReservationPercentage" name="ReservationPercentage" value="{{Doctor.percentage}}" hidden="true"  disabled>
+
+        </div>
+        <div class="col-xs-4">
+        <label>Taxes </label>
+        <input type="text" class="form-control" id="TotalTaxes" name="TotalTaxes" disabled>
+        <input type="text" class="form-control" id="TaxesPercentage" name="TaxesPercentage" value="{{Doctor.Taxes}}" hidden="true" disabled>
+
+        </div>
+        <div class="col-xs-4">
+        <label>Procedure Percentage </label>
+        <input type="text" class="form-control" id="TotalProcedure" name="TotalProcedure" disabled>
+        <input type="text" class="form-control" id="ProcedurePercentage" name="ProcedurePercentage" value="{{Doctor.percentageProcedure}}" hidden="true" disabled>
+
+        </div>
+        <div class="col-xs-4">
+        <label>Loan </label>
+        <input type="text" class="form-control" id="TotalLoan" name="TotalLoan" disabled>
+        </div>
+        <div class="col-xs-4">
+        <label>Deducation </label>
+        <input type="text" class="form-control" id="Deducation" name="Deducation" disabled>
+        </div>
+        <div class="col-xs-4">
+        <label>Sallery </label>
+        <input type="text" class="form-control" id="SalleryAmount" name="SalleryAmount" disabled>
+        </div>
+
+      </div>
+      </div>
+</div>
+
+  </template>
+  <template name="search04">
+
+    <input type="text" id="searchBox" name="searchBox">
+  </template>

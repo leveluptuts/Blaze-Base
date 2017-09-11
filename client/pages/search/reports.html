@@ -1,0 +1,41 @@
+<template name="search">
+
+
+  <div>
+    <div class="panel-body pull-left">
+<div class="pull-right"><a href="/reservationsearch" class="btn btn-primary">Reservation </a></div>
+<div class="pull-right"><a href="/stocksearch" class="btn btn-primary">Stock </a></div>
+<div class="pull-right"><a href="/billssearch" class="btn btn-primary">Bills </a></div>
+<p><label></label></p>
+</div>
+</div>
+
+<div class="page-header clearfix">
+    <div class=" pull-right">
+      <input type="text" name="search" class="form-control" width="250px" placeholder="Find patient...">
+    </div>
+  </div>
+
+  <ul class="list-group">
+    {{#if searching}}
+
+    {{else}}
+      {{#each patientInfo}}
+      <div>
+        <li class="list-group-item clearfix">
+           <span class="pull-left">{{name}}      </span>
+
+
+<div class="pull-right"><a href="/PatientDetails/{{_id}}" class="btn btn-primary">Details </a></div>
+
+
+        </li>
+
+</div>
+
+      {{else}}
+        <p class="alert alert-warning">No Result Found. Sorry.</p>
+      {{/each}}
+    {{/if}}
+  </ul>
+</template>

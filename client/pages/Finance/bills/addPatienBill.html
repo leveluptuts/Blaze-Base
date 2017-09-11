@@ -1,0 +1,180 @@
+<template name="addPatientBill">
+{{> SideNav}}
+  <div class="col-xs-12">
+   <span class="pull-right"><a href="/PatientDetails/{{mdata._id}}" class="btn btn-defult"> patient details </a></span>
+  </div>
+
+  <form class="add-Bill-info" >
+<button type="submit"   class="btn btn-primary"  id="buttonItemenable" >new Bill</button>
+  </form>
+<p><label></label></p>
+  <form class="add-Bill_Procedure-info" >
+    <div class="panel panel-primary">
+       <div class="panel-heading">Procedure Bill</div>
+           <div class="panel-body">
+             <div class="col-xs-4">
+             <label> Procedure name</label>
+             <input type="text" class="form-control" id="procedurename" name="procedurename" required>
+             </div>
+             <div class="col-xs-4">
+             <label> Dr.name</label>
+             <input type="text" class="form-control" id="DrName" name="DrName" required>
+             </div>
+
+
+        <div class="col-xs-4">
+        <label>Hand skill </label>
+        <input type="number" class="form-control" id="Handskill" name="Handskill" required>
+        </div>
+
+        <div class="col-xs-4">
+        <label>Anaesthesia </label>
+        <input type="number" class="form-control" id="Anaesthesia" name="Anaesthesia" required>
+        </div>
+
+        <div class="col-xs-4">
+        <label>O.R </label>
+        <input type="number" class="form-control" id="or" name="or" required>
+        </div>
+
+        <div class="col-xs-4">
+        <label>Assistance </label>
+        <input type="number" class="form-control" id="Assistance" name="Assistance" required>
+        </div>
+
+        <div class="col-xs-4">
+        <label>Accomoadation</label>
+        <input type="number" class="form-control" id="Accomoadation" name="Accomoadation" required >
+        </div>
+
+        <button id="ButtonAddProcedure" type="submit" class="btn btn-primary" disabled>Add</button>
+
+        </div>
+    </div>
+
+  </form>
+  <div class="panel panel-primary">
+         <div class="panel-body">
+           <div class="col-xs-8">
+           <label>Item</label>
+           {{> search4}}
+  </div>
+  <button  id="buttonItem" class="btn btn-primary pull-right" disabled>Find Item</button>
+
+</div>
+</div>
+
+
+<form class="add-Bill_Details-info" >
+  <div class="panel panel-primary">
+       <div class="panel-heading">Stock Bill</div>
+         <div class="panel-body">
+
+      <div class="col-xs-4">
+      <label>Amount </label>
+      <input type="text" class="form-control" id="amount" name="amount" value="{{stItem.Amount}}" disabled>
+      </div>
+
+      <div class="col-xs-4">
+      <label>Price </label>
+      <input type="text" class="form-control" id="price" name="price" value="{{stItem.Custmer_Unit_Price}}" disabled>
+      </div>
+
+      <div class="col-xs-4">
+
+      <input type="hidden" class="form-control" id="_id" name="_id" value="{{stItem._id}}" disabled>
+      </div>
+
+      <div class="col-xs-4">
+      <label>Unit </label>
+      <input type="text" class="form-control" id="unit" name="unit" value={{stItem.Unit}} disabled>
+      </div>
+      <div class="col-xs-4">
+      <label>Requierd </label>
+      <input type="number" class="form-control" id="requierdamount" name="requierdamount" >
+      </div>
+
+      <button id="btnvaldiatestockamount" class="btn btn-primary pull-left" disabled >Check</button>
+
+      <button id="ButtonAdd"  class="btn btn-primary pull-right" disabled>Add</button>
+
+      </div>
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+          <th>Item</th>
+          <th>Unit</th>
+          <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+          {{#each patientBills}}
+              <tr>
+                <td>
+                    {{ item }}
+                </td>
+              <td>
+                  {{ unit }}
+              </td>
+              <td>
+                  {{ price }}
+              </td>
+              <td>
+                  {{ requierditemamount }}
+              </td>
+
+
+
+              <td><button type="submit" id="buttonEdit" class="btn btn-primary">Edit</button>
+
+                <button type="submit" id="buttonDelete" class="btn btn-primary"  enabled >Delete</button>
+              </td>
+              </tr>
+          {{/each}}
+      </tbody>
+  </table>
+
+
+
+
+
+<div class="form-group">
+
+<label>Total Stock Bill</label>
+<input type="text" class="form-control" id="TotalStockBill" name="TotalStockBill">
+
+<label>Total Procedure bill</label>
+<input type="text" class="form-control" id="TotalProcedureBill" name="TotalProcedureBill">
+
+<label>Total Bill Amount</label>
+<span class="pull-right"><button type="submit" id="btnCalculateTotalBill" class="btn btn-primary"   >Calculate</button></span>
+
+<input type="text" class="form-control" id="TotalBillAmount" name="TotalBillAmount">
+
+
+
+<span class="pull-right"><button type="submit" id="buttonSave" class="btn btn-primary"  disabled >Save</button></span>
+<span class="pull-right"><button type="submit" class="btn btn-primary">Print</button></span>
+
+</div>
+
+</template>
+
+
+<template name="search4">
+
+  <input type="text" id="searchBox" name="searchBox">
+</template>

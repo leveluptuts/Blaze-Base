@@ -1,0 +1,130 @@
+<template name="deduction">
+
+  {{>SideNavBills}}
+
+  <legend>  <a href="/sallery" class="btn btn-defult">Sallery   </a>
+  <a href="/deduction" class="btn btn-defult">Details</a>
+  </legend>
+
+  <div class="panel panel-default">
+  <div class="panel-body">
+        <div class="col-xs-4">
+      <label>Start</label>
+      <input type="text" class="form-control" id="start" name="start" >
+        </div>
+        <div class="col-xs-4">
+      <label>End</label>
+      <input type="text" class="form-control"  id="end" name="end" >
+      </div>
+
+
+          <div class="col-xs-4">
+        <label>Dr.Name</label>
+          {{> searchDeduction}}
+        <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+
+    </div>
+          </div>
+
+
+        <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDeduction">ِDeduction</a>
+            </div>
+        <div id="collapseDeduction" class="panel-collapse collapse On">
+
+        <div class="panel-body">
+          <table class="table table-bordered table-hover">
+              <thead>
+              <tr>
+
+                  <th>Date</th>
+                  <th>Deduction</th>
+                  <th>Comment</th>
+              </tr>
+              </thead>
+              <tbody>
+                  {{#each Deduction}}
+
+              <tr>
+
+                      <td>{{ createdAt }}</td>
+                      <td>{{ deduction }}</td>
+                      <td></td>
+              </tr>
+
+                  {{/each}}
+              </tbody>
+          </table>
+</div>
+</div>
+
+
+<div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseDellay">Dellay</a>
+    </div>
+<div id="collapseDellay" class="panel-collapse collapse On">
+  <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+
+                    <th>Date</th>
+                    <th>Expected</th>
+                    <th>Attendance</th>
+                    <th>Dellay</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {{#each Dellay}}
+
+                <tr>
+
+                        <td>{{ date }}</td>
+                      <td>{{AttendTime}}</td>
+  <td>{{ActualAttendTime}}</td>
+                        <td>{{ humanReadable.hours }}:{{ humanReadable.minutes }}</td>
+
+
+                </tr>
+
+                    {{/each}}
+                </tbody>
+            </table>
+</div>
+</div>
+<div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseLoan">Loan</a>
+    </div>
+<div id="collapseLoan" class="panel-collapse collapse off">
+  <div class="panel-body">
+                      <table class="table table-bordered table-hover">
+                          <thead>
+                          <tr>
+
+                              <th>Date</th>
+                              <th>Loan</th>
+                              <th>Comment</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                              {{#each Loan}}
+
+                          <tr>
+
+                                  <td>{{ createdAt }}</td>
+                                  <td>{{ loan }}</td>
+                                  <td></td>
+                          </tr>
+
+                              {{/each}}
+                          </tbody>
+                      </table>
+                    </div>
+                    </div>
+                  </div>
+</template>
+
+<template name="searchDeduction">
+
+  <input type="text" id="searchBox" name="searchBox">
+</template>

@@ -1,0 +1,164 @@
+<template name="stockstatus">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  {{#if isInRole 'admin'}}
+  {{> SideNav}}
+
+  <legend>  <a href="/StockStatus" class="btn btn-defult"><i  aria-hidden="true"></i>View/Add</a>
+
+  </legend>
+
+
+  <div class="col-xs-12">
+
+  </div>
+
+{{/if}}
+<form class="patient-Antenatal" >
+  <div class="panel panel-default">
+  <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse04">Stock limitation</a>
+      </h4> </div>
+  <div id="collapse04" class="panel-collapse collapse off">
+  <form>
+      <div class="col-xs-4">
+    <label>Amount Value</label>
+  <input type="text" class="form-control" id="amountvalue" name="amountvalue" >
+  <button type="submit" id="buttonamountvalue" class="btn btn-primary pull-right">Find</button>
+</div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>unit</th>
+            <th>Amount</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            {{#each limitamountvalue}}
+                <tr>
+                  <td>
+                      {{ Item }}
+                  </td>
+                  <td>
+                      {{ Unit }}
+                  </td>
+                <td>
+                    {{ Amount }}
+                </td>
+                </tr>
+            {{/each}}
+        </tbody>
+      </table>
+      </form>
+      </div>
+
+
+
+
+<div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse03">Stock Value</a>
+    </h4> </div>
+<div id="collapse03" class="panel-collapse collapse off">
+<form>
+<button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+          <th>Items number</th>
+          <th>Total dellar price</th>
+          <th>Total customer price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td>{{ mdata1 }}</td>
+          <td>{{ mdata2 }}</td>
+          <td>{{ mdata3 }}</td>
+     </tr>
+    </tbody>
+    </table>
+    </form>
+    </div>
+
+
+
+
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse02"> Stock Expierd</a>
+          </h4>
+        </div>
+        <div id="collapse02" class="panel-collapse collapse off">
+
+  <form>
+
+
+
+
+  <button type="submit" id="button1" class="btn btn-primary pull-right">Find</button>
+    <table class="table table-bordered table-hover">
+        <thead>
+  <tr>
+      <th>Item</th>
+      <th>Amount</th>
+      <th>Expierd Date</th>
+  </tr>
+  </thead>
+  <tbody>
+{{#each expiery}}
+  <tr>
+      <td>{{ Item }}  </td>
+      <td>{{ Amount }}</td>
+      <td>{{ expirydate }}</td>
+ </tr>
+{{/each}}
+  </tbody>
+  </table>
+  </form>
+  </div>
+
+
+    <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Transaction</a>
+        </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse off">
+<form>
+   <table class="table table-striped table-bordered table-hover">
+   <thead>
+   <tr>
+      <th>Item</th>
+      <th>Unit</th>
+      <th>Price</th>
+      <th>Quantaty</th>
+      <th>Date</th>
+  </tr>
+  </thead>
+  <tbody>
+    {{#each patientBills}}
+  <tr>
+      <td>{{ item }}</td>
+      <td>{{ unit }}</td>
+      <td>{{ price }}</td>
+      <td>{{ requierditemamount }}</td>
+      <td>{{ createdAt }}</td>
+      <a href="/viewpatientBill/{{Billid}}" class="btn btn-primary">View </a>
+  </tr>
+    {{/each}}
+  </tbody>
+  </table>
+  </form>
+  </div>
+
+</div>
+</form>
+</template>

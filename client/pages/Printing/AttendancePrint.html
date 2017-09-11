@@ -1,0 +1,67 @@
+<template name="AttendancePrevewPrint">
+  <div class="panel-body">
+    <div class="col-xs-4">
+  <label>Name</label>
+    {{> search0004}}
+  </div>
+
+        <div class="col-xs-4">
+      <label>Start</label>
+      <input type="text" class="form-control" id="start" name="start" >
+        </div>
+        <div class="col-xs-4">
+      <label>End</label>
+      <input type="text" class="form-control"  id="end" name="end" >
+      </div>
+      <button type="submit" id="button" class="btn btn-primary pull-right" >Find</button>
+
+          </div>
+
+
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+
+          <th>Name</th>
+          <th>Status</th>
+          <th>Expected</th>
+          <th>Attendance</th>
+          <th>Delay</th>
+          <th>Date</th>
+
+
+
+      </tr>
+      </thead>
+      <tbody>
+          {{#each Attendance1}}
+              <tr>
+                <td>
+                    {{ Drname }}
+                </td>
+              <td>
+                  {{ Status }}
+              </td>
+              <td>
+                  {{ AttendTime }}
+              </td>
+              <td>
+              {{ActualAttendTime}}
+              </td>
+              <td>
+              {{humanReadable.hours}}:{{humanReadable.minutes}}
+              </td>
+              <td>
+                  {{ date }}
+              </td>
+
+              </tr>
+          {{/each}}
+      </tbody>
+  </table>
+
+</template>
+<template name="search0004">
+
+  <input type="text" id="searchBox" name="searchBox">
+</template>

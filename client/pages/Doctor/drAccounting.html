@@ -1,0 +1,87 @@
+<template name="drAccounting">
+
+
+
+
+
+
+
+
+  <div class="panel-body">
+        <div class="col-xs-4">
+      <label>Start</label>
+      <input type="text" class="form-control" id="start" name="start" >
+        </div>
+        <div class="col-xs-4">
+      <label>End</label>
+      <input type="text" class="form-control"  id="end" name="end" >
+      </div>
+      <div class="col-xs-4">
+      <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+      </div>
+    </div>
+
+
+
+
+      <div class="panel panel-primary">
+             <div class="panel-body">
+
+          <div class="col-xs-4">
+          <label>Visits </label>
+          <input type="text" class="form-control"  id="visits" name="visits" value="{{mdata1}}" disabled>
+          </div>
+
+          <div class="col-xs-4">
+          <label>Dr.%: </label>
+          <input type="text" class="form-control"  id="percentage" name="percentage" value="{{mdata4.percentage}}" disabled>
+          </div>
+
+          <div class="col-xs-4">
+          <label>Clinic </label>
+          <input type="text" class="form-control" id="clinicamount" name="clinicamount" disabled>
+          </div>
+
+          <div class="col-xs-4">
+          <label>Doctor </label>
+          <input type="text" class="form-control" id="Total" name="Total" disabled>
+          </div>
+
+          <button type="submit" id="buttonShow" class="btn btn-primary pull-right">Calculat</button>
+
+          </div>
+      </div>
+
+
+      {{# each mdata}}
+
+      <div class="panel panel-primary">
+         <div class="panel-heading">{{name}}</div>
+         <div class="panel-body">
+
+
+
+    <p>  <label>Price : </label> {{price}}</p>
+    <p>   <label>Date : </label> {{date}}</p>
+    <p>   <label>Type : </label> {{type}}</p>
+      <label>Dr.Name : </label> {{drName}}
+
+
+       <span class="pull-right"><a href="/PatientDetails/{{patientId}}" class="btn btn-primary">Details </a></span>
+
+
+      </div>
+
+      </div>
+      {{/each}}
+
+
+
+
+  </template>
+  <template name="search7">
+
+    <input type="text" id="searchBox" name="searchBox">
+
+
+</template>

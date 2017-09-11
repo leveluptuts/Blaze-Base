@@ -1,0 +1,25 @@
+
+
+<template name="GalleryHistory">
+
+<h1>Galleryhistory </h1>
+  {{# each history}}
+
+  <div class="panel panel-primary">
+     <div class="panel-heading">{{date}}</div>
+
+     <div class="panel-body">
+
+       <div class="col-xs-8">
+
+    <p><label> Type : </label> {{quantity}}</p>
+  <p><label>Status : </label> {{time}}</p>
+    <p><label>Notes : </label> {{time}}</p>
+
+
+  </div>
+  </div>
+
+  </div>
+  {{/each}}
+  </template>
