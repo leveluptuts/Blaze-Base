@@ -26,14 +26,14 @@ AccountsTemplates.addFields([
 		displayName: 'Profession',
 		select: [
 			{
-				text:'Developer',
-				value: 'developer'
+				text:'Admin',
+				value: 'admin'
 			}, {
-				text: 'Designer',
-				value: 'designer'
+				text: 'Doctor',
+				value: 'doctor'
 			}, {
-				text: 'Other',
-				value: 'other'
+				text: 'Reservation',
+				value: 'reservation'
 			}
 		]
 	}
