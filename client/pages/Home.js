@@ -12,6 +12,7 @@ Template.Home.onCreated(function(){
 Template.Home.helpers({
   reservPatients: function() {
     var drId=Session.get('userID');
+	  console.log(drId);
 
 		return Doctors.findOne({ dr_Id : drId });
 
