@@ -1,0 +1,53 @@
+<template name="DrNotification">
+
+
+
+   <p><label><h4>Reservation Today :</h4> </label> {{reservPatients.count}}</p>
+      {{# each reservPatients }}
+      {{#if editing}}
+     <div class="panel panel-primary">
+        <div class="panel-heading">{{name}}</div>
+        <div class="panel-body">
+
+
+          <div class="col-xs-12">
+     <p><label>Time : </label> {{time}}</p>
+     <p><label>Type : </label> {{type}}</p>
+     <p><label>Status : </label> <input type="text" id="editeitemstatus" value="{{status}}" enabled> </p>
+
+     <button class="deleteItem btn btn-primary pull-right">Delete</button>
+     <button class="editItem btn btn-primary pull-right">Edit</button>
+
+
+         </div>
+     </div>
+
+     </div>
+     {{else}}
+     <div class="panel panel-primary">
+        <div class="panel-heading">
+
+          {{name}}
+
+          </div>
+
+        <div class="panel-body">
+
+
+          <div class="col-xs-12">
+     <p><label>Time : </label> {{time}} </p>
+     <p><label>Type : </label> {{type}}</p>
+      <p>  <label>Status  : </label>  {{status}}</p>
+      <button class="editItem btn btn-primary pull-left">Done</button>
+      <span class="pull-right"><a href="/PatientDetails/{{patientId}}" class="btn btn-primary">Details </a></span>
+
+
+         </div>
+     </div>
+
+     </div>
+     {{/if}}
+     {{/each}}
+
+
+  </template>

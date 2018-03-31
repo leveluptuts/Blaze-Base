@@ -1,0 +1,49 @@
+<template name="attendance">
+  {{#if isInRole 'admin'}}
+{{> SideNav}}
+  <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+
+          <th>Name</th>
+          <th>Status</th>
+          <th>Attend Time</th>
+          <th>Exact Time</th>
+          <th>Delay</th>
+          <th>Date</th>
+
+
+
+      </tr>
+      </thead>
+      <tbody>
+          {{#each Attend}}
+              <tr>
+                <td>
+                    {{ Drname }}
+                </td>
+              <td>
+                  {{ Status }}
+              </td>
+              <td>
+                  {{ AttendTime }}
+              </td>
+              <td>
+              {{ActualAttendTime}}
+              </td>
+              <td>
+              {{humanReadable.hours}}:{{humanReadable.minutes}}
+              </td>
+              <td>
+                  {{ date }}
+              </td>
+
+              </tr>
+          {{/each}}
+      </tbody>
+  </table>
+    <a href="/AttendancePrevewPrint" class="btn btn-primary pull-right">Print</a>
+  {{else}}
+    <h1>Not Authorized</h1>
+  {{/if}}
+</template>

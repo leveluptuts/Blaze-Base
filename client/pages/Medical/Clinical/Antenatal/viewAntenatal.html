@@ -1,0 +1,430 @@
+<template name="viewAntenatal">
+{{#with Antenatal}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{Patienttest}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+<legend>
+<a href="/Antenatal/" class="btn btn-defult">Antenatal care</a>
+
+</legend>
+
+
+
+<form class="patient-Antenatal" >
+
+      <div class="panel panel-default">
+
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Presconception CheckList {{Antenatal.createdAt}}</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse off">
+
+
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse01">Nutrition</a>
+    </h4>
+  </div>
+  <div id="collapse01" class="panel-collapse collapse off">
+
+<table class="table table-bordered table-hover">
+<tbody>
+    <tr>
+  <td align="center"><label  ><input type="checkbox" name="CalciumandVitaminD" class="radio-inline col-xs-12" value="CalciumandVitaminD" {{CalciumandVitaminD 'CalciumandVitaminD' }} >Calcium and Vitamin D</label></td>
+  <td align="center"><label><input type="checkbox" name="FolicAcid"  class="radio-inline col-xs-12" value="FolicAcid"  {{FolicAcid 'FolicAcid' }} >Folic Acid</label></td>
+  <td align="center"><label><input type="checkbox" name="optradio"  class="radio-inline col-xs-12" value="Iron"  {{Iron 'Iron' }} >Iron</label></td>
+
+</tr>
+<tr>
+  <td align="center"><label ><input type="checkbox" name="Zinc" class="radio-inline col-xs-12" value="Zinc" {{Zinc 'Zinc'}}>Zinc</label></td>
+  <td align="center"><label><input type="checkbox" name="VitaminA"  class="radio-inline col-xs-12" value="VitaminA" {{VitaminA 'VitaminA'}}>Vitamin A</label></td>
+  <td align="center"><label><input type="checkbox" name="Poverty"  class="radio-inline col-xs-12" value="Poverty"  {{Poverty 'Poverty'}}>Poverty</label></td>
+</tr>
+<tr>
+  <td align="center"><label ><input type="checkbox" name="Bodyweight" class="radio-inline col-xs-12" value="Bodyweight" {{Bodyweight 'Bodyweight'}}>Body weight</label></td>
+  <td align="center"><label><input type="checkbox" name="Caffeine"  class="radio-inline col-xs-12" value="Caffeine"  {{Caffeine 'Caffeine'}}>Caffeine</label></td>
+  <td align="center"><label><input type="checkbox" name="VegetarianConsideration"  class="radio-inline col-xs-12" value="VegetarianConsideration"  {{VegetarianConsideration 'VegetarianConsideration'}}>Vegetarian Consideration</label></td>
+</tr>
+<tr>
+  <td align="center"><label><input type="checkbox" name="HerbalProducts"  class="radio-inline col-xs-12" value="HerbalProducts"  {{HerbalProducts 'HerbalProducts'}}>Herbal Products</label></td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<p><label></label></p>
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse02">Substance Use </a>
+    </h4>
+  </div>
+      <div id="collapse02" class="panel-collapse collapse off">
+
+    <table class="table table-bordered table-hover">
+    <tbody>
+
+      <tr>
+    <td align="center"><label ><input type="checkbox" name="TobaccoUse" class="radio-inline col-xs-12" value="TobaccoUse"  {{TobaccoUse 'TobaccoUse'}}>Paternal and/or Maternal Tobacco Use</label></td>
+    <td align="center"><label><input type="checkbox" name="DrugDependency"  class="radio-inline col-xs-12" value="DrugDependency" {{DrugDependency 'DrugDependency'}}>Drug Dependency</label></td>
+    <td align="center"><label><input type="checkbox" name="AlcoholUse"  class="radio-inline col-xs-12" value="AlcoholUse"  {{AlcoholUse 'AlcoholUse'}}>Alcohol Use</label></td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<p><label></label></p>
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse03"> Medications </a>
+    </h4>
+  </div>
+      <div id="collapse03" class="panel-collapse collapse off">
+
+    <table class="table table-bordered table-hover">
+    <tbody>
+
+    <tr>
+    <td align="center"><label ><input type="checkbox" name="Accutane" class="radio-inline col-xs-12" value="Accutane" {{Accutane 'Accutane'}}>Accutane</label></td>
+    <td align="center"><label><input type="checkbox" name="ACEInhibiors"  class="radio-inline col-xs-12" value="ACEInhibiors" {{ACEInhibiors 'ACEInhibiors'}}>ACE Inhibiors</label></td>
+    <td align="center"><label><input type="checkbox" name="Aminopterinmethotrexate"  class="radio-inline col-xs-12" value="Aminopterinmethotrexate" {{Aminopterinmethotrexate 'Aminopterinmethotrexate'}}>Aminopterin methotrexate</label></td>
+</tr>
+    <tr>
+    <td align="center"><label ><input type="checkbox" name="Carbamazepine" class="radio-inline col-xs-12" value="Carbamazepine" {{Carbamazepine 'Carbamazepine'}}>Carbamazepine</label></td>
+    <td align="center"><label><input type="checkbox" name="CoumadinWarfarin"  class="radio-inline col-xs-12" value="CoumadinWarfarin" {{CoumadinWarfarin 'CoumadinWarfarin'}}>Coumadin Warfarin</label></td>
+    <td align="center"><label><input type="checkbox" name="Daunorubicin"  class="radio-inline col-xs-12" value="Daunorubicin" {{Daunorubicin 'Daunorubicin'}}>Daunorubicin</label></td>
+</tr>
+   <tr>
+    <td align="center"><label ><input type="checkbox" name="Lithium" class="radio-inline col-xs-12" value="Lithium"  {{Lithium 'Lithium'}}>Lithium</label></td>
+    <td align="center"><label><input type="checkbox" name="Metformin"  class="radio-inline col-xs-12" value="Metformin"  {{Metformin 'Metformin'}}>Metformin</label></td>
+    <td align="center"><label><input type="checkbox" name="Phenytoin"  class="radio-inline col-xs-12" value="Phenytoin"  {{Phenytoin 'Phenytoin'}}>Phenytoin</label></td>
+  </tr>
+     <tr>
+  <td align="center"><label><input type="checkbox" name="Propylthiouracilmethimazole"  class="radio-inline col-xs-12" value="Propylthiouracilmethimazole" {{Propylthiouracilmethimazole 'Propylthiouracilmethimazole'}}>Propylthiouracil methimazole</label></td>
+  <td align="center"><label><input type="checkbox" name="Quinolones"  class="radio-inline col-xs-12" value="Quinolones" {{Quinolones 'Quinolones'}}>Quinolones</label></td>
+  <td align="center"><label><input type="checkbox" name="RetinoicAcid"  class="radio-inline col-xs-12" value="RetinoicAcid" {{RetinoicAcid 'RetinoicAcid'}}>Retinoic Acid</label></td>
+  </tr>
+     <tr>
+    <td align="center"><label><input type="checkbox" name="Tetracycline"  class="radio-inline col-xs-12" value="Tetracycline" {{Tetracycline 'Tetracycline'}}>Tetracycline</label></td>
+    <td align="center"><label><input type="checkbox" name="Trimethadione"  class="radio-inline col-xs-12" value="Trimethadione" {{Trimethadione 'Trimethadione'}}>Trimethadione</label></td>
+   <td align="center"><label><input type="checkbox" name="ValporicAcid"  class="radio-inline col-xs-12" value="ValporicAcid" {{ValporicAcid 'ValporicAcid'}}>Valporic Acid</label></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</form>
+<p><label></label></p>
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse04"> Infections </a>
+    </h4>
+  </div>
+      <div id="collapse04" class="panel-collapse collapse off">
+        <table class="table table-bordered table-hover">
+        <tbody>
+
+        <tr>
+    <td align="center"><label ><input type="checkbox" name="CMV" class="radio-inline col-xs-12" value="CMV" {{CMV 'CMV'}}>CMV</label></td>
+    <td align="center"><label><input type="checkbox" name="HumanparvovirusB19"  class="radio-inline col-xs-12" value="HumanparvovirusB19" {{HumanparvovirusB19 'HumanparvovirusB19'}}>Human parvovirus B 19</label></td>
+    <td align="center"><label><input type="checkbox" name="Rubella"  class="radio-inline col-xs-12" value="Rubella" {{Rubella 'Rubella'}}>Rubella</label></td>
+</tr>
+<tr>
+    <td align="center"><label><input type="checkbox" name="Toxoplasmosis"  class="radio-inline col-xs-12" value="Toxoplasmosis" {{Toxoplasmosis 'Toxoplasmosis'}}>Toxoplasmosis</label></td>
+    <td align="center"><label><input type="checkbox" name="VaricellaHSV1"  class="radio-inline col-xs-12" value="VaricellaHSV1" {{VaricellaHSV1 'VaricellaHSV1'}}>Varicella (HSV-1)</label></td>
+</tr>
+
+  </tbody>
+  </table>
+  </div>
+  </form>
+  <p><label></label></p>
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse05"> Sexually Transmitted Diseases </a>
+    </h4>
+  </div>
+      <div id="collapse05" class="panel-collapse collapse off">
+        <table class="table table-bordered table-hover">
+        <tbody>
+
+        <tr>
+    <td align="center"><label ><input type="checkbox" name="Chlamydia" class="radio-inline col-xs-12" value="Chlamydia" {{Chlamydia 'Chlamydia'}}>Chlamydia</label></td>
+  <td align="center">  <label><input type="checkbox" name="GenitalHumanPapillomavirus"  class="radio-inline col-xs-12" value="GenitalHumanPapillomavirus" {{GenitalHumanPapillomavirus 'GenitalHumanPapillomavirus'}}>Genital Human Papillomavirus</label></td>
+  <td align="center">  <label><input type="checkbox" name="Gonorrhea"  class="radio-inline col-xs-12" value="Gonorrhea" {{Gonorrhea 'Gonorrhea'}}>Gonorrhea</label></td>
+</tr>
+<tr>
+  <td align="center">  <label><input type="checkbox" name="HepatitisB"  class="radio-inline col-xs-12" value="HepatitisB" {{HepatitisB 'HepatitisB'}}>Hepatitis B</label></td>
+    <td align="center"><label><input type="checkbox" name="HerpesHSV2"  class="radio-inline col-xs-12" value="HerpesHSV2" {{HerpesHSV2 'HerpesHSV2'}}>Herpes HSV-2)</label></td>
+  <td align="center">  <label><input type="checkbox" name="HIVAIDS"  class="radio-inline col-xs-12" value="HIVAIDS" {{HIVAIDS 'HIVAIDS'}}>HIV/AIDS</label></td>
+</tr>
+<tr>
+    <td align="center"><label><input type="checkbox" name="Syphilis"  class="radio-inline col-xs-12" value="Syphilis" {{Syphilis 'Syphilis'}}>Syphilis</label></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </form>
+<p><label></label></p>
+
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse07">Chronic Illness</a>
+    </h4>
+  </div>
+      <div id="collapse07" class="panel-collapse collapse off">
+        <table class="table table-bordered table-hover">
+        <tbody>
+
+        <tr>
+    <td align="center"><label ><input type="checkbox" name="Cancer" class="radio-inline col-xs-12" value="Cancer" {{Cancer 'Cancer'}}>Cancer</label></td>
+  <td align="center">  <label><input type="checkbox" name="Cardiovascular"  class="radio-inline col-xs-12" value="Cardiovascular" {{Cardiovascular 'Cardiovascular'}}>Cardiovascular Disease</label></td>
+  <td align="center">  <label><input type="checkbox" name="Diabetes"  class="radio-inline col-xs-12" value="Diabetes" {{Diabetes 'Diabetes'}}>Diabetes</label></td>
+</tr>
+<tr>
+    <td align="center"><label><input type="checkbox" name="Epilepsy"  class="radio-inline col-xs-12" value="Epilepsy" {{Epilepsy 'Epilepsy'}}>Epilepsy</label></td>
+  <td align="center">  <label><input type="checkbox" name="Lupus"  class="radio-inline col-xs-12" value="Lupus" {{Lupus 'Lupus'}}>Lupus</label></td>
+  <td align="center">  <label><input type="checkbox" name="MaternalPKU"  class="radio-inline col-xs-12" value="MaternalPKU" {{MaternalPKU 'MaternalPKU'}}>Maternal PKU</label></td>
+  </tr>
+  <tr>
+  <td align="center">  <label><input type="checkbox" name="PsychiarricIllness"  class="radio-inline col-xs-12" value="PsychiarricIllness" {{PsychiarricIllness 'PsychiarricIllness'}}>Psychiarric Illness</label></td>
+  <td align="center">  <label><input type="checkbox" name="ThyroidProblems"  class="radio-inline col-xs-12" value="ThyroidProblems" {{ThyroidProblems 'ThyroidProblems'}}>Thyroid Problems</label></td>
+  </tr>
+
+
+  </tbody>
+  </table>
+  </div>
+  </form>
+<p><label></label></p>
+
+
+<form>
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse08">Other Issues</a>
+    </h4>
+  </div>
+      <div id="collapse08" class="panel-collapse collapse off">
+        <table class="table table-bordered table-hover">
+        <tbody>
+
+        <tr>
+  <td align="center">  <label ><input type="checkbox" name="Abuse" class="radio-inline col-xs-12" value="Abuse" {{Abuse 'Abuse'}}>Abuse</label></td>
+  <td align="center">  <label><input type="checkbox" name="Genetics"  class="radio-inline col-xs-12" value="Genetics" {{Genetics 'Genetics'}}>Genetics</label></td>
+  <td align="center">  <label><input type="checkbox" name="HomeandLeisureActivities"  class="radio-inline col-xs-12" value="HomeandLeisureActivities" {{HomeandLeisureActivities 'HomeandLeisureActivities'}}>Home and Leisure Activities</label></td>
+</tr>
+<tr>
+  <td align="center">  <label><input type="checkbox" name="HotTubsandSaunas"  class="radio-inline col-xs-12" value="HotTubsandSaunas" {{HotTubsandSaunas 'HotTubsandSaunas'}}>Hot Tubs and Saunas</label></td>
+  <td align="center">  <label><input type="checkbox" name="Infertility"  class="radio-inline col-xs-12" value="Infertility" {{Infertility 'Infertility'}}>Infertility</label></td>
+  <td align="center">  <label><input type="checkbox" name="PreviousOutcomes"  class="radio-inline col-xs-12" value="PreviousOutcomes" {{PreviousOutcomes 'PreviousOutcomes'}}>Previous Outcomes</label></td>
+  </tr>
+  <tr>
+  <td align="center">  <label><input type="checkbox" name="SocialSupport"  class="radio-inline col-xs-12" value="SocialSupport" {{SocialSupport 'SocialSupport'}}>Social Support</label></td>
+  <td align="center">  <label><input type="checkbox" name="WorkplaceConcerns"  class="radio-inline col-xs-12" value="WorkplaceConcerns" {{WorkplaceConcerns 'WorkplaceConcerns'}}>Workplace Concerns</label></td>
+  </tr>
+
+
+    </tbody>
+    </table>
+    </div>
+    </form>
+  <p><label></label></p>
+
+
+
+</div>
+
+
+
+<div class="panel-heading">
+  <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Pregnancy Summary</a>
+  </h4>
+</div>
+<div id="collapse2" class="panel-collapse collapse off">
+  <div class="panel-body">
+
+
+<form>
+<label for="descField" class="col-xs-8">Nutrition</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+</form>
+</div>
+</div>
+
+
+
+<div class="panel-heading">
+  <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Obstetrical History </a>
+  </h4>
+</div>
+<div id="collapse3" class="panel-collapse collapse off">
+  <div class="panel-body">
+
+
+<form>
+<label for="descField" class="col-xs-8">Nutrition</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+</form>
+</div>
+</div>
+
+
+<div class="panel-heading">
+  <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Medical History & Physical Exam</a>
+  </h4>
+</div>
+<div id="collapse4" class="panel-collapse collapse off">
+  <div class="panel-body">
+
+
+<form>
+<label for="descField" class="col-xs-8">Nutrition</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+</form>
+</div>
+</div>
+
+
+<div class="panel-heading">
+  <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Pregnancy ar risk</a>
+  </h4>
+</div>
+<div id="collapse5" class="panel-collapse collapse off">
+  <div class="panel-body">
+
+
+<form>
+<label for="descField" class="col-xs-8">Nutrition</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+</form>
+</div>
+</div>
+
+
+
+<div class="panel-heading">
+  <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Pregnancy at Hight risk </a>
+  </h4>
+</div>
+<div id="collapse6" class="panel-collapse collapse off">
+  <div class="panel-body">
+
+
+<form>
+<label for="descField" class="col-xs-8">Nutrition</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+</form>
+</div>
+</div>
+
+
+
+<div class="panel-heading">
+  <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse7"> Postnatal Visit</a>
+  </h4>
+</div>
+<div id="collapse7" class="panel-collapse collapse off">
+  <div class="panel-body">
+
+
+<form>
+<label for="descField" class="col-xs-8">Nutrition</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label ><input type="radio" name="optradio" class="radio-inline col-xs-12">Calcium and Vitamin D</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Folic Acid</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+<label><input type="radio" name="optradio"  class="radio-inline col-xs-12">Iron</label>
+</form>
+</div>
+</div>
+
+
+</div>
+<button type="submit" class="btn btn-primary">Insert</button>
+</form>
+
+
+{{/with}}
+</template>

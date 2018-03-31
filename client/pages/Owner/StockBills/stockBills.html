@@ -1,0 +1,60 @@
+<template name="StockBills">
+
+{{>SideNavBills}}
+<div class="col-xs-12">
+ <span class="pull-right"><a href="/addpatientbill" class="btn btn-defult"><i class="fa fa-plus-square" aria-hidden="true"></i>  Patient Bill </a></span>
+
+</div>
+
+<div class="panel-body">
+
+      <div class="col-xs-4">
+    <label>Start</label>
+    <input type="text" class="form-control" id="start" name="start" >
+      </div>
+      <div class="col-xs-4">
+    <label>End</label>
+    <input type="text" class="form-control"  id="end" name="end" >
+    </div>
+
+    <div class="col-xs-4">
+    <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+    </div>
+
+  </div>
+
+  <div class="panel-body">
+        <div class="col-xs-8">
+  <label> Amount</label>
+  <input type="text" class="form-control"  id="totalAmount" name="totalAmount"  >
+  </div>
+
+  <div class="col-xs-4">
+    <label> Bills Count</label>
+    <input type="text" class="form-control"  id="visits" name="visits" value="{{mdata1}}" >
+          </div>
+        </div>
+
+
+
+    {{# each mdata}}
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">{{createdAt}}</div>
+       <div class="panel-body">
+
+
+
+  <p>  <label>Patient Id : </label> {{patientId}}</p>
+  <p>  <label>Bill no. : </label> {{_id}}</p>
+    <label>Amount : </label> {{total}}
+
+
+     <span class="pull-right"><a href="/viewpatientBill/{{patientId}}/{{_id}}" class="btn btn-primary">View </a></span>
+
+
+    </div>
+
+    </div>
+    {{/each}}
+</template>

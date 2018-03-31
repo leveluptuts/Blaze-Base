@@ -1,0 +1,61 @@
+<template name="mangmentView">
+
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{mdata.patientId}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+
+       <form class="update-patient-info" >
+
+
+         <div class="form-group">
+         <label>Dignoses</label>
+         <input type="text" class="form-control" id="procedure" name="Dignoses" value="{{mdata.Dignoses}}" >
+         </div>
+         <div class="form-group">
+         <label>Invistigations</label>
+         <input type="text" class="form-control" id="status" name="Invistigations" value="{{mdata.Invistigations}}" >
+         </div>
+         <div class="form-group">
+         <label>Comment</label>
+         <input type="text" class="form-control" id="status" name="Comment" value="{{mdata.Comment}}" >
+         </div>
+         <div class="form-group">
+
+
+       </div>
+       </form>
+
+       <table class="table table-bordered table-hover">
+           <thead>
+             <tr>
+               <th>Medication</th>
+               <th>comment</th>
+
+             </tr>
+           </thead>
+           <tbody>
+               {{#each medicationtview}}
+                   <tr>
+                     <td>
+                         {{ medication }}
+                     </td>
+                   <td>
+                       {{ medicationComment }}
+                   </td>
+
+
+                   </tr>
+               {{/each}}
+           </tbody>
+       </table>
+
+       <button type="submit" class="btn btn-primary">Print</button>
+       <button type="submit" class="btn btn-primary">new copy</button>
+
+
+</template>

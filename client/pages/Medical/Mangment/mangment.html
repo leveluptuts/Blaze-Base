@@ -1,0 +1,23 @@
+<template name="mangment">
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{mdata._id}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+
+
+
+
+    {{> MangmentHistory}}
+
+
+    <div class="col-xs-12">
+     <span class="pull-right"><a href="/addMangment/{{mdata._id}}" class="btn btn-defult"><i class="fa fa-plus-square" aria-hidden="true"></i> new Data </a></span>
+    </div>
+
+
+
+</template>

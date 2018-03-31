@@ -1,0 +1,25 @@
+
+
+<template name="MangmentHistory">
+
+
+{{# each mdata2}}
+
+<div class="panel panel-primary">
+   <div class="panel-heading">{{createdAt}}</div>
+   <div class="panel-body">
+
+     <div class="col-xs-12">
+<label>Dignoses : </label> {{Dignoses}}
+
+ <span class="pull-right"><a href="/mangmentView/{{_id}}" class="btn btn-defult"> View </a></span>
+
+
+    </div>
+</div>
+
+</div>
+{{/each}}
+
+
+  </template>

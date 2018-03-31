@@ -1,0 +1,254 @@
+<template name="newpersonalHistory">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{History.patientId}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+
+
+<legend>  <a href="/personalHistory" class="btn btn-defult">History   </a>
+
+</legend>
+
+ <form class="update-patient-info" >
+      <div class="panel panel-default">
+
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Personal History</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse off">
+        <div class="panel-body">
+
+          <form>
+              <label >Date of birth</label>
+               <input type="text" class="form-control"  id="dateofbirth" name="dateofbirth" value="{{History.dateofbirth}}" >
+          </form>
+
+          <form>
+              <label >Occupation</label>
+               <input type="text" class="form-control"  id="occupation" name="occupation" value="{{History.occupation}}"  >
+          </form>
+
+          <form>
+
+              <label for="descField" class="col-xs-4">Sex : {{History.sex}}</label>
+              <label ><input type="radio" name="Sex"  class="radio-inline col-xs-8" id="Male" value="Male"   {{isChecked 'Male'}} >  Male  </label>
+              <label><input type="radio" name="Sex"  class="radio-inline col-xs-8" id="Femal" value="Female"   {{isChecked 'Female'}}>  Female</label>
+
+
+          </form>
+
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4">Marital History:  {{History.MaritalHistory}}</label>
+              <label ><input type="radio" name="MaritalHistory" class="radio-inline col-xs-12" value="M">M  .  </label>
+              <label><input type="radio" name="MaritalHistory"  class="radio-inline col-xs-12" value="S">S  . </label>
+              <label><input type="radio" name="MaritalHistory"  class="radio-inline col-xs-12" value="W">W  . </label>
+              <label><input type="radio" name="MaritalHistory"  class="radio-inline col-xs-12" value="D">D  .</label>
+          </form>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4">Special Habits : {{History.SpecialHabits}}</label>
+              <label ><input type="radio" name="SpecialHabits" class="radio-inline col-xs-12" value="Smoking">Smoking</label>
+              <label><input type="radio" name="SpecialHabits"  class="radio-inline col-xs-12" value="Coffe">Coffe</label>
+              <label><input type="radio" name="SpecialHabits"  class="radio-inline col-xs-12" value="Alcohol">Alcohol</label>
+          </form>
+          <p><label></label></p>
+
+          <form>
+                <label for="descField" class="col-xs-4">Allergy : {{History.Allergy.Allergy}}</label>
+                <label ><input type="radio" name="Allergy" class="radio-inline col-xs-8" value="Yes">  Yes  </label>
+                <label><input type="radio" name="Allergy"  class="radio-inline col-xs-8"  value="No">  No</label>
+            </form>
+
+              <label for="descField" class="col-xs-4"></label>
+               <div class="col-xs-8"> <p><input type="text" class="form-control"  id="AllergyComment" name="AllergyComment" value="{{History.Allergy.commet}}"></p></div>
+           <p><label></label></p>
+
+           <form>
+                 <label for="descField" class="col-xs-4"><p>Adverse<br/> drugs reaction :{{History.DrugsReaction.DrugsReaction}}</p></label>
+                 <label ><input type="radio" name="DrugsReaction" class="radio-inline col-xs-8" value="Yes">  Yes  </label>
+                 <label><input type="radio" name="DrugsReaction"  class="radio-inline col-xs-8" value="No">  No</label>
+             </form>
+
+               <label for="descField" class="col-xs-4"></label>
+                <div class="col-xs-8"> <p><input type="text" class="form-control"  id="DrugsReactionCommet" name="DrugsReactionCommet" value="{{History.DrugsReaction.commet}}" ></p></div>
+            <p><label></label></p>
+
+            <form>
+                <label >Other Diseases</label>
+                 <input type="text" class="form-control"  id="OtherDiseases" name="OtherDiseases" >
+            </form>
+
+            <form>
+                <label >Complain</label>
+                 <input type="text" class="form-control"  id="Complain" name="Complain" >
+            </form>
+
+
+            <form>
+                <label >Present History</label>
+                 <input type="text" class="form-control"  id="PresentHistory" name="PresentHistory" >
+            </form>
+
+            <form>
+                <label >Past History</label>
+                 <input type="text" class="form-control"  id="PastHistory" name="PastHistory" >
+            </form>
+
+            <form>
+                <label >Family History</label>
+                 <input type="text" class="form-control"  id="FamilyHistory" name="FamilyHistory" >
+            </form>
+
+            <form>
+                <label >Psychosocial History</label>
+                 <input type="text" class="form-control"  id="PsychosocialHistory" name="PsychosocialHistory" >
+            </form>
+ </div>
+</div>
+
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">History by Systems</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+
+
+          <form>
+              <label for="descField" class="col-xs-4">General </label>
+              <label ><input type="radio" name="General" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="General"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="GeneralComment" name="GeneralComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4">Pain </label>
+              <label ><input type="radio" name="Pain" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="Pain"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="PainComment" name="PainComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>Respiratory<br/>System</P> </label>
+              <label ><input type="radio" name="RespiratorySystem" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="RespiratorySystem"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="RespiratorySystemComment" name="RespiratorySystemComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>Gardiovascular<br/>System</P> </label>
+              <label ><input type="radio" name="GardiovascularSystem" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="GardiovascularSystem"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="GardiovascularSystemComment" name="GardiovascularSystemComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>Gastrointestinal<br/>System</P> </label>
+              <label ><input type="radio" name="GastrointestinalSystem" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="GastrointestinalSystem"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="GastrointestinalSystemComment" name="GastrointestinalSystemComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>Genitourinary<br/>System</P> </label>
+              <label ><input type="radio" name="GenitourinarySystem" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="GenitourinarySystem"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="GenitourinarySystemComment" name="GenitourinarySystemComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>Endocrine<br/>System</P> </label>
+              <label ><input type="radio" name="EndocrineSystem" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="EndocrineSystem"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="EndocrineSystemComment" name="EndocrineSystemComment" ></p></div>
+          <p><label></label></p>
+
+          <form>
+              <label for="descField" class="col-xs-4"><p>Neurological<br/>System</P> </label>
+              <label ><input type="radio" name="NeurologicalSystem" class="radio-inline col-xs-8" value="Normal">  Normal  </label>
+              <label><input type="radio" name="NeurologicalSystem"  class="radio-inline col-xs-8" value="Abnormal">  Abnormal</label>
+          </form>
+              <label for="descField" class="col-xs-4"></label>
+             <div class="col-xs-8"> <p><input type="text" class="form-control"  id="NeurologicalSystemComment" name="NeurologicalSystemComment" ></p></div>
+          <p><label></label></p>
+
+
+
+</div>
+      </div>
+
+
+
+
+
+
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Present medications</a>
+        </h4>
+      </div>
+
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <form>
+              <label >Drug</label>
+               <input type="text" class="form-control"  id="end" name="end" >
+          </form>
+
+
+          <form>
+              <label >Dosage / Frequency</label>
+               <input type="text" class="form-control"  id="end" name="end" >
+          </form>
+
+          <form>
+              <label >Duration of therapy</label>
+               <input type="text" class="form-control"  id="end" name="end" >
+          </form>
+<button type="submit" class=" btn btn-primary pull-right"> + Drug</button>
+        </div>
+      </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</div>
+</form>
+
+</template>

@@ -1,0 +1,88 @@
+<template name="Stock">
+  {{#if isInRole 'admin'}}
+  {{> SideNav}}
+  {{/if}}
+<form class="update-patient-info" >
+  <div class="panel-body">
+        <div class="col-xs-4">
+      <label>Item</label>
+      <input type="text" class="form-control" id="Item" name="Item" >
+        </div>
+        <div class="col-xs-4">
+      <label>Unit</label>
+      <input type="text" class="form-control" id="Unit" name="Unit" >
+    </div>
+    <div class="col-xs-4">
+  <label>Amount</label>
+  <input type="text" class="form-control" id="Amount" name="Amount" >
+  </div>
+  <div class="col-xs-8">
+<label>Deilar Unit Price</label>
+<input type="text area" class="form-control" id="Deilar_Unit_Price" name="Deilar_Unit_Price">
+</div>
+<div class="col-xs-8">
+<label>Custmer Unit Price</label>
+<input type="text area" class="form-control" id="Custmer_Unit_Price" name="Custmer_Unit_Price" >
+</div>
+<div class="col-xs-8">
+<label>Expiry Date</label>
+<input type="text area" class="form-control" id="expirydate" name="expirydate" >
+</div>
+</div>
+<button type="submit" class="btn btn-primary">Add</button>
+
+</form>
+
+
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Unit</th>
+            <th>Amount</th>
+            <th>D.U.P</th>
+            <th>C.U.P</th>
+            <th>D.T.P</th>
+            <th>C.T.P</th>
+            <th>expiry date</th>
+          </tr>
+        </thead>
+<tbody>
+  {{#each mdata}}
+  {{#if editing}}
+  <tr>
+<td><input type="text" id="editeitemItem" value="{{ Item }}"></td>
+<td><input type="text" id="editeitemUnit" value="{{ Unit }}"></td>
+<td><input type="text" id="editeitemAmount" value="{{ Amount }}"></td>
+<td><input type="text" id="editeitemDeilar_Unit_Price" value="{{ Deilar_Unit_Price }}"></td>
+<td><input type="text" id="editeitemCustmer_Unit_Price" value="{{ Custmer_Unit_Price }}"></td>
+<td><input type="text" id="editeitemDeilar_Total_Price" value=" {{ Deilar_Total_Price }}" disabled></td>
+<td><input type="text" id="editeitemCustmer_Total_Price" value="{{ Custmer_Total_Price }}" disabled></td>
+<td><input type="text" id="editeitemexpirydate" value="{{ expirydate }}"></td>
+
+  {{#if isInRole 'admin'}}
+<td><button class="editItem">Edit</button><button class="deleteItem">Delete</button></td>
+{{/if}}
+  </tr>
+{{else}}
+    <tr>
+    <td>{{ Item }}</td>
+    <td>{{ Unit }}</td>
+    <td> {{ Amount }}</td>
+    <td>{{ Deilar_Unit_Price }}</td>
+    <td>{{ Custmer_Unit_Price }}</td>
+    <td>{{ Deilar_Total_Price }}</td>
+    <td>{{ Custmer_Total_Price }}</td>
+    <td>{{ expirydate }}</td>
+      {{#if isInRole 'admin'}}
+  <td><button class="editItem">Edit</button><button class="deleteItem">Delete</button></td>
+{{/if}}
+    </tr>
+  {{/if}}
+  {{/each}}
+        </tbody>
+    </table>
+
+</template>

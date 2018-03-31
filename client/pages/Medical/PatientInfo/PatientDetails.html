@@ -1,0 +1,56 @@
+<template name="PatientDetails">
+  {{#if isInRole 'normal-user'}}
+{{#if isInRole 'admin'}}
+<div class="col-xs-12">
+ <span class="pull-right"><a href="/addPatientBill/{{mdata._id}}" class="btn btn-defult"><i class="fa fa-plus-square" aria-hidden="true"></i> add bill </a></span>
+ <span class="pull-right"><a href="/patientReport/{{mdata._id}}" class="btn btn-defult"><i class="fa fa-plus-square" aria-hidden="true"></i> Report</a></span>
+</div>
+{{else}}
+<div class="col-xs-12">
+ <span class="pull-right"><a href="/patientReport/{{mdata._id}}" class="btn btn-defult"><i class="fa fa-plus-square" aria-hidden="true"></i> Report</a></span>
+</div>
+{{/if}}
+
+<nav class="side-nav">
+  <ul>
+    <li><a href="/PatientDetails/{{mdata._id}}"><i class="fa fa-id-card-o" aria-hidden="true"></i>Info</a></li>
+    <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+    <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+    <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+  </ul>
+</nav>
+<form class="update-patient-info" >
+<div class="form-group">
+
+
+
+  <div class="form-group">
+  <label>name</label>
+  <input type="text" class="form-control" id="name" name="name" value="{{mdata.name}}">
+  </div>
+  <div class="form-group">
+  <label>Age</label>
+  <input type="text" class="form-control" id="age" name="age" value="{{mdata.age}}">
+  </div>
+
+<label>Sex</label>
+<input type="text" class="form-control" id="sex" name="sex" value="{{mdata.sex}}">
+</div>
+<div class="form-group">
+<label>Work</label>
+<input type="text" class="form-control" id="work" name="work" value="{{mdata.work}}">
+</div>
+<div class="form-group">
+<label>Phone</label>
+<input type="text" class="form-control" id="notes" name="notes" value="{{mdata.phone}}">
+</div>
+</form>
+<button  id="buttunUpdate" class="btn btn-primary">Update</button>
+
+<button type="submit"   class="btn btn-primary"  id="buttonDone" >Done</button>
+
+{{else}}
+  <h1>Not Authorized</h1>
+{{/if}}
+
+</template>

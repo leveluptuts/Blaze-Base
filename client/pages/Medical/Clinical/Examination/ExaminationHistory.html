@@ -1,0 +1,37 @@
+<template name="ExaminationHistory">
+
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails/{{mdata._id}}"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+
+  <legend>  <a href="/clinicalData" class="btn btn-defult">History   </a>
+  <a href="/ExaminationHistory" class="btn btn-defult">Examination</a>
+  <a href="/AntenatalHistory" class="btn btn-defult">Antenatal care</a>
+  </legend>
+
+
+  {{# each ClinicalHistory}}
+  <div class="panel panel-primary">
+     <div class="panel-heading">Visit Date: {{createdAt}}</div>
+     <div class="panel-body">
+       <div class="col-xs-12">
+         <p><label>Diagnosis : </label> {{Diagnosis}}</p>
+          <label>Plan of Care : </label> {{PlanofCare}}
+           <span class="pull-center"><a href="/Examination/{{_id}}" class="btn btn-primary pull-right"> Examination </a></span>
+      </div>
+     </div>
+  </div>
+  {{/each}}
+
+
+    <div class="col-xs-12">
+     <span class="pull-right"><a  href="/newexamination" class="btn btn-defult"><i class="fa fa-plus-square" aria-hidden="true"></i> new Data </a></span>
+    </div>
+
+
+</template>

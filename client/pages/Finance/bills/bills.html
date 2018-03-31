@@ -1,0 +1,136 @@
+<template name="bills">
+
+{{>SideNavBills}}
+<legend>  <a href="/bills" class="btn btn-defult">Reservation   </a>
+<a href="/procedureBills" class="btn btn-defult">Procedure</a>
+
+</legend>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" id="buttonReservation" href="#collapseReservation"> Reseravtion Search</a>
+        </div>
+    <div id="collapseReservation" class="panel-collapse collapse on">
+
+  <div class="panel-body">
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+        <th>date</th>
+        <th>DR</th>
+        <th>Type</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each allReservation}}
+
+    <tr>
+
+            <td>{{ name }}</td>
+            <td>{{ date }}</td>
+            <td>{{drName}}</td>
+            <td>{{type}}</td>
+            <td>{{ price }}</td>
+            <td><span class="pull-right"><a href="/PatientDetails/{{patientId}}" class="btn btn-primary">Details </a></span></td>
+
+    </tr>
+
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+    </div>
+
+
+<div class="panel-heading">
+        <a data-toggle="collapse" data-parent="#accordion" id="buttonloan" href="#collapse01">Advanced Search</a>
+    </div>
+<div id="collapse01" class="panel-collapse collapse off">
+
+<div class="panel-body">
+      <div class="col-xs-4">
+    <label>Start</label>
+    <input type="text" class="form-control" id="start" name="start" >
+      </div>
+      <div class="col-xs-4">
+    <label>End</label>
+    <input type="text" class="form-control"  id="end" name="end" >
+    </div>
+
+
+
+        <div class="col-xs-4">
+      <label>Dr.Name</label>
+    {{> search3}}
+        </div>
+
+      <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+
+
+        </div>
+
+
+    <div class="panel panel-primary">
+           <div class="panel-body">
+
+        <div class="col-xs-4">
+        <label>Visits </label>
+        <input type="text" class="form-control"  id="visits" name="visits" value="{{mdata1}}" disabled>
+        </div>
+
+        <div class="col-xs-4">
+        <label>Dr.%: </label>
+        <input type="text" class="form-control"  id="percentage" name="percentage" value="{{mdata3.percentage}}" disabled>
+        </div>
+
+        <div class="col-xs-4">
+        <label>Clinic </label>
+        <input type="text" class="form-control" id="clinicamount" name="clinicamount" disabled>
+        </div>
+
+        <div class="col-xs-4">
+        <label>Doctor </label>
+        <input type="text" class="form-control" id="Total" name="Total" disabled>
+        </div>
+
+        <button type="submit" id="buttonShow" class="btn btn-primary pull-right">Calculat</button>
+        <button type="submit" id="buttonPrint" class="btn btn-primary pull-right">Print</button>
+
+        </div>
+    </div>
+
+
+    {{# each ReservatioSearch}}
+
+    <div class="panel panel-primary">
+       <div class="panel-heading">{{name}}</div>
+       <div class="panel-body">
+
+
+
+  <p>  <label>Price : </label> {{price}}</p>
+  <p>   <label>Date : </label> {{date}}</p>
+  <p>   <label>Type : </label> {{type}}</p>
+    <label>Dr.Name : </label> {{drName}}
+
+
+     <span class="pull-right"><a href="/PatientDetails/{{patientId}}" class="btn btn-primary">Details </a></span>
+
+
+    </div>
+
+    </div>
+    {{/each}}
+
+
+</div>
+</div>
+
+</template>
+<template name="search3">
+
+  <input type="text" id="searchBox" name="searchBox">
+</template>

@@ -1,0 +1,60 @@
+<template name="ClinicalBills">
+{{>SideNavBills}}
+
+
+<legend>  <a href="/addclinicalbill" class="btn btn-defult">Clinic Bill   </a>
+<a href="/addclinicalbillContaniue" class="btn btn-defult">Remaining Clinic Bill</a>
+</legend>
+
+<div class="panel-body">
+      <div class="col-xs-4">
+    <label>Start</label>
+    <input type="text" class="form-control" id="start" name="start" >
+      </div>
+      <div class="col-xs-4">
+    <label>End</label>
+    <input type="text" class="form-control"  id="end" name="end" >
+    </div>
+
+    <div class="col-xs-4">
+    <button type="submit" id="button" class="btn btn-primary pull-right">Find</button>
+    </div>
+
+  </div>
+
+
+
+  <div class="panel-body">
+        <div class="col-xs-4">
+  <label> Amount</label>
+<input type="text" class="form-control" id="Total" name="Total">
+  </div>
+<div class="col-xs-4">
+  <label> Bills</label>
+  <input type="text" class="form-control"  id="visits" name="visits" value="{{mdata1}}" >
+
+        </div>
+
+        </div>
+
+  {{# each mdata}}
+
+  <div class="panel panel-primary">
+     <div class="panel-heading">{{createdAt}}</div>
+     <div class="panel-body">
+
+
+
+<p>  <label>Bill Amount : </label> {{total}}</p>
+
+
+
+   <span class="pull-right"><a href="/viewclinicalbill/{{_id}}" class="btn btn-primary">Details </a></span>
+
+
+  </div>
+
+  </div>
+  {{/each}}
+
+</template>

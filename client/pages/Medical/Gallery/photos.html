@@ -1,0 +1,43 @@
+<template name="photos">
+  <nav class="side-nav">
+    <ul>
+      <li><a href="/PatientDetails"><i class="fa fa-info" aria-hidden="true"></i>Info</a></li>
+      <li><a href="/clinicalData"><i class="fa fa-stethoscope" aria-hidden="true"></i>Clinical</a></li>
+      <li><a href="/mangment"><i class="fa fa-heartbeat" aria-hidden="true"></i>Mangment</a></li>
+      <li><a href="/gallery"><i class="fa fa-picture-o  " aria-hidden="true"></i>Gallery</a></li>
+    </ul>
+  </nav>
+
+  <legend>  <a href="/lab" class="btn btn-defult">Lab</a>
+<a href="/report" class="btn btn-defult">Report</a>
+  </legend>
+
+
+  <form class="add-image-info" >
+
+
+
+  <div class="form-group">
+  <label>Photo</label>
+  <input type="file" class="uploadFileButton" id="photo" name="photo">
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+  {{# each mdata}}
+  <div class="panel panel-primary">
+ <p><label>Date : </label> {{createdAt}}</p>
+
+     <div class="panel-body">
+       <div class="col-xs-8">
+         <div class="pull-left"><img class="img-thumbnail"  src="{{imageUrl}}"  /></div>
+       </div>
+       <div class="col-xs-8">
+
+
+  </div>
+
+  </div>
+
+  </div>
+  {{/each}}
+  </template>
